@@ -5,17 +5,13 @@ using UnityEngine;
 public class ShootBalloon : ShootBalloonBehavior
 {
     public float thrust;
-    public Rigidbody rb;
+
+    private Rigidbody rb;
     private GameManager gameController;
 
     void Awake()
     {
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
         rb = GetComponent<Rigidbody>();
     }
 
@@ -23,14 +19,34 @@ public class ShootBalloon : ShootBalloonBehavior
     {
         foreach (Touch touch in Input.touches)
         {
-            if (touch.phase == TouchPhase.Began && gameController.getRoleChoosen() == "buteur")
+            if (touch.phase == TouchPhase.Began)
             {
-                networkObject.SendRpc(RPC_SHOOT, Receivers.All);
+                TryShoot();
             }
         }
     }
 
-    public override void Shoot(RpcArgs args)
+    public void TryShoot()
+    {
+        if (gameController.getRoleChoosen() == Role.Shooter)
+        {
+            if (networkObject != null) // connected
+            {
+                networkObject.SendRpc(RPC_SHOOT, Receivers.All);
+            }
+            else // not connected
+            {
+                Shoot();
+            }
+        }
+    }
+
+    public override void Shoot_RPC(RpcArgs args)
+    {
+        Shoot();
+    }
+
+    public void Shoot()
     {
         rb.AddForce(0, thrust, thrust, ForceMode.Impulse);
     }
