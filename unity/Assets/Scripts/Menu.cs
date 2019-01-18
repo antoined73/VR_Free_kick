@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Menu : MonoBehaviour
 {
-    public CanvasGroup canvasGroup;
+    public CanvasGroup menuUI;
+
+    public CanvasGroup defenderWallUI;
 
     private GameObject gameController;
 
@@ -22,9 +24,31 @@ public class Menu : MonoBehaviour
 
     public void ClickOnMenu(string role)
     {
-        canvasGroup.alpha = 0;
-        canvasGroup.blocksRaycasts = true;
-        canvasGroup.interactable = false;
+        TurnOffCanvas(menuUI);
+        switch (role)
+        {
+            case "buteur":
+                break;
+            case "mur":
+                TurnOnCanvas(defenderWallUI);
+                break;
+            case "gardien":
+                break;
+        }
         gameController.GetComponent<GameManager>().choiceRole(role);
+    }
+
+    private void TurnOnCanvas(CanvasGroup canvas)
+    {
+        canvas.alpha = 1;
+        canvas.blocksRaycasts = true;
+        canvas.interactable = true;
+    }
+
+    private void TurnOffCanvas(CanvasGroup canvas)
+    {
+        canvas.alpha = 0;
+        canvas.blocksRaycasts = false;
+        canvas.interactable = false;
     }
 }

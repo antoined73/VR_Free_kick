@@ -11,7 +11,7 @@ public class BuildWall : MonoBehaviour
         for (int x = 0; x < 5; x++)
         {
             float position = x - 2.5f;
-            Instantiate(defender, new Vector3(position + defender.localScale.x, 0, 0), Quaternion.identity);
+            Instantiate(defender, new Vector3(transform.position.x + position, 0, 0), Quaternion.identity);
         }
     }
 }

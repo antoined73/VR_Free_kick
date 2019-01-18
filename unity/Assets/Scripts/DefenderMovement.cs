@@ -1,18 +1,25 @@
-﻿using UnityEngine;
+﻿using BeardedManStudios.Forge.Networking.Generated;
+using UnityEngine;
 
-public class DefenderMovement : MonoBehaviour
+public class DefenderMovement : DefenderBehavior
 {
 
     public Rigidbody rb;
     public float jumpForce = 200f;
 
     // Update is called once per frame
-    void FixedUpdate()
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (!networkObject.IsServer)
         {
-            rb.AddForce(new Vector3(0, jumpForce * Time.deltaTime, 0), ForceMode.Impulse);
+            transform.position = networkObject.position;
         }
         rb.AddForce(Vector3.down * Time.deltaTime);
+        networkObject.position = transform.position;
+    }
+    
+    public void Jump()
+    {
+        rb.AddForce(new Vector3(0, jumpForce * Time.deltaTime, 0), ForceMode.Impulse);
     }
 }
