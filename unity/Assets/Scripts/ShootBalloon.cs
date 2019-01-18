@@ -6,6 +6,12 @@ public class ShootBalloon : ShootBalloonBehavior
 {
     public float thrust;
     public Rigidbody rb;
+    private GameManager gameController;
+
+    void Awake()
+    {
+        gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +23,7 @@ public class ShootBalloon : ShootBalloonBehavior
     {
         foreach (Touch touch in Input.touches)
         {
-            if (touch.phase == TouchPhase.Began)
+            if (touch.phase == TouchPhase.Began && gameController.getRoleChoosen() == "buteur")
             {
                 networkObject.SendRpc(RPC_SHOOT, Receivers.All);
             }

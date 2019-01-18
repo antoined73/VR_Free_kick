@@ -5,6 +5,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public List<Camera> cameras;
+
+    private string roleChoosen;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,13 +26,23 @@ public class GameManager : MonoBehaviour
         if(role == "buteur")
         {
             cameras[0].enabled = true;
-        } else if (role == "mur")
+            roleChoosen = "buteur";
+        }
+        else if (role == "mur")
         {
             cameras[2].enabled = true;
-        } else if (role == "gardien")
+            roleChoosen = "mur";
+        }
+        else if (role == "gardien")
         {
             cameras[1].enabled = true;
+            roleChoosen = "gardien";
         }
+    }
+
+    public string getRoleChoosen()
+    {
+        return roleChoosen;
     }
 
     private void disableAllCameras()
