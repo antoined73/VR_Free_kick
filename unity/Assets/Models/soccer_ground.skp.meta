@@ -1,0 +1,227 @@
+fileFormatVersion: 2
+guid: a5329abc021f8934da331b04700f975a
+SketchUpImporter:
+  generateBackFace: 0
+  mergeCoplanarFaces: 0
+  selectedNodes: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d000000
+  assetHash:
+    serializedVersion: 2
+    Hash: 4e495696646aa51b2de8888d4d60f022
+  longitude: -105.283
+  latitude: 40.017
+  northCorrection: -0
+  fileUnit: 0
+  sketchUpImportData:
+    defaultCamera:
+      position: {x: 4.3849015, y: 0.15195735, z: -1.8456379}
+      lookAt: {x: -14.161799, y: -3.33285, z: -4.2841554}
+      up: {x: -0.18157688, y: 0.98308694, z: -0.023873704}
+      fov: 35
+      aspectRatio: 0
+      orthoSize: 1
+      isPerspective: 1
+    scenes: []
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: 3d man standing
+    100002: 3d man standing 1
+    100004: 3d man standing 10
+    100006: 3d man standing 11
+    100008: 3d man standing 12
+    100010: 3d man standing 13
+    100012: 3d man standing 2
+    100014: 3d man standing 3
+    100016: 3d man standing 4
+    100018: 3d man standing 5
+    100020: 3d man standing 6
+    100022: 3d man standing 7
+    100024: 3d man standing 8
+    100026: 3d man standing 9
+    100028: //RootNode
+    400000: 3d man standing
+    400002: 3d man standing 1
+    400004: 3d man standing 10
+    400006: 3d man standing 11
+    400008: 3d man standing 12
+    400010: 3d man standing 13
+    400012: 3d man standing 2
+    400014: 3d man standing 3
+    400016: 3d man standing 4
+    400018: 3d man standing 5
+    400020: 3d man standing 6
+    400022: 3d man standing 7
+    400024: 3d man standing 8
+    400026: 3d man standing 9
+    400028: //RootNode
+    2100000: _defaultMat
+    2100002: _5
+    2100004: _3
+    2100006: _1
+    2100008: '[Color_000]'
+    2100010: '[Fencing_Construction]'
+    2100012: _6
+    2100014: '[Fencing_Chain_Link]'
+    2100016: _7
+    2300000: 3d man standing
+    2300002: 3d man standing 1
+    2300004: 3d man standing 10
+    2300006: 3d man standing 11
+    2300008: 3d man standing 12
+    2300010: 3d man standing 13
+    2300012: 3d man standing 2
+    2300014: 3d man standing 3
+    2300016: 3d man standing 4
+    2300018: 3d man standing 5
+    2300020: 3d man standing 6
+    2300022: 3d man standing 7
+    2300024: 3d man standing 8
+    2300026: 3d man standing 9
+    2300028: //RootNode
+    3300000: 3d man standing
+    3300002: 3d man standing 1
+    3300004: 3d man standing 10
+    3300006: 3d man standing 11
+    3300008: 3d man standing 12
+    3300010: 3d man standing 13
+    3300012: 3d man standing 2
+    3300014: 3d man standing 3
+    3300016: 3d man standing 4
+    3300018: 3d man standing 5
+    3300020: 3d man standing 6
+    3300022: 3d man standing 7
+    3300024: 3d man standing 8
+    3300026: 3d man standing 9
+    3300028: //RootNode
+    4300000: Mesh soccer_ground
+    4300002: Mesh 3d man standing
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Color_000]'
+    second: {fileID: 2100000, guid: 3ceb286aec61bc94a8377edfa67874db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Fencing_Chain_Link]'
+    second: {fileID: 2100000, guid: db2b030ff446ff541a0e02a898547c74, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: '[Fencing_Construction]'
+    second: {fileID: 2100000, guid: 1ea49cc932883a844be1a76ed4786b69, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _1
+    second: {fileID: 2100000, guid: 62eb265126960304e81c59b8e42a6fa9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _3
+    second: {fileID: 2100000, guid: 11d594ea3709e0044b5df324311c7467, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _5
+    second: {fileID: 2100000, guid: 9c410700aac941b4ca6062a78ce9fcfb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _6
+    second: {fileID: 2100000, guid: ebbe7fefb6c528648adca6c5d645ced4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _7
+    second: {fileID: 2100000, guid: 5f7c4573b892dba4cb2d793a70e56732, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _defaultMat
+    second: {fileID: 2100000, guid: e71147bdfec023141808532683e1f9cf, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
