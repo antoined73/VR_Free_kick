@@ -50,4 +50,9 @@ public class ShootBalloon : ShootBalloonBehavior
     {
         rb.AddForce(0, thrust, thrust, ForceMode.Impulse);
     }
+
+    public void OnClick()
+    {
+        networkObject.SendRpc(RPC_SHOOT, Receivers.All);
+    }
 }
