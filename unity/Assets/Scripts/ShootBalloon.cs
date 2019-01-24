@@ -8,6 +8,7 @@ public class ShootBalloon : ShootBalloonBehavior
 
     private Rigidbody rb;
     private GameManager gameController;
+    public Transform startPointTransform;
 
     void Awake()
     {
@@ -49,5 +50,12 @@ public class ShootBalloon : ShootBalloonBehavior
     public void Shoot()
     {
         rb.AddForce(0, thrust, thrust, ForceMode.Impulse);
+    }
+
+    public void ResetBall()
+    {
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+        transform.position = startPointTransform.position;
     }
 }
