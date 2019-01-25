@@ -10,7 +10,7 @@ public class ShootBalloon : ShootBalloonBehavior
     public float shootDirection;
     public float shootPower;
     public Vector2 target;
-    public bool targetSetted = false;
+    public bool targetSettled;
 
     public List<Camera> cameras;
 
@@ -22,19 +22,28 @@ public class ShootBalloon : ShootBalloonBehavior
     {
         gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         rb = GetComponent<Rigidbody>();
+        this.targetSettled = false;
     }
 
     void Update()
     {
         foreach (Touch touch in Input.touches)
         {
-            if (touch.phase == TouchPhase.Began && !targetSetted)
+            if (touch.phase == TouchPhase.Began && !targetSettled)
             {
                 this.target = touch.position;
                 cameras[1].enabled = false;
                 cameras[0].enabled = true;
                 Console.WriteLine(this.target.x + " ; " + this.target.y);
             }
+        }
+        if(Input.GetMouseButtonDown(0) && !targetSettled && gameController.getRoleChoosen() == Role.Shooter)
+        {
+            this.target = Input.mousePosition;
+            cameras[1].enabled = false;
+            cameras[0].enabled = true;
+            Debug.Log(this.target.x + " ; " + this.target.y);
+            this.targetSettled = true;
         }
     }
 
@@ -65,7 +74,7 @@ public class ShootBalloon : ShootBalloonBehavior
 
     public void OnClick()
     {
-        networkObject.SendRpc(RPC_SHOOT, Receivers.All);
+        TryShoot();
     }
 
     public void directionValueUpdate(float newValue)
