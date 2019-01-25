@@ -10,12 +10,15 @@ public class DefenderMovement : DefenderBehavior
     // Update is called once per frame
     private void Update()
     {
-        if (!networkObject.IsServer)
+        if (networkObject != null)
         {
-            transform.position = networkObject.position;
+            if (!networkObject.IsServer)
+            {
+                transform.position = networkObject.position;
+            }
+            networkObject.position = transform.position;
         }
         rb.AddForce(Vector3.down * Time.deltaTime);
-        networkObject.position = transform.position;
     }
     
     public void Jump()

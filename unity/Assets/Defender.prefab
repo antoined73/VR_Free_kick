@@ -139,6 +139,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f25fc4c2bdddc4943be7e5bde8eefa0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backgroundImage: {fileID: 0}
+  TrackedJoint: 11
+  OverlayObject: {fileID: 0}
+  smoothFactor: 5
   rb: {fileID: 8297094569192679300}
   jumpForce: 200
 --- !u!136 &1970550027722109262
