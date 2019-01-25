@@ -3827,7 +3827,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6337258625181791419}
-  - component: {fileID: 1488284801166071922}
   m_Layer: 0
   m_Name: Cages
   m_TagString: Untagged
@@ -3929,20 +3928,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 0}
---- !u!136 &1488284801166071922
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6337258625181559003}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.4
-  m_Height: 14.42
-  m_Direction: 2
-  m_Center: {x: -18.47, y: 8.6, z: -0.67}
 --- !u!1 &6337258625181559007
 GameObject:
   m_ObjectHideFlags: 0

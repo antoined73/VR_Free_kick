@@ -1600,7 +1600,7 @@ PrefabInstance:
         type: 3}
       propertyPath: renderModelPrefab
       value: 
-      objectReference: {fileID: 1000011547835092, guid: d5082f7d9f947374197e0a97786f4e40,
+      objectReference: {fileID: 1000010184414672, guid: 5dc81ef5cae96304586abbc6e4b5beb8,
         type: 3}
     - target: {fileID: 4802849439497800376, guid: 1d205996d8988c346b027b81bed240ff,
         type: 3}
