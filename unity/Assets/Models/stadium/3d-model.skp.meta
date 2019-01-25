@@ -1,0 +1,1287 @@
+fileFormatVersion: 2
+guid: 3356f6a0dcacf7840a1e8910b720f9a8
+SketchUpImporter:
+  generateBackFace: 0
+  mergeCoplanarFaces: 0
+  selectedNodes: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c0000001d0000001e0000001f000000200000002100000022000000230000002400000025000000260000002700000028000000290000002a0000002b0000002c0000002d0000002e0000002f000000300000003100000032000000330000003400000035000000360000003700000038000000390000003a0000003b0000003c0000003d0000003e0000003f000000400000004100000042000000430000004400000045000000460000004700000048000000490000004a0000004b0000004c0000004d0000004e0000004f000000500000005100000052000000530000005400000055000000560000005700000058000000590000005a0000005b0000005c0000005d0000005e0000005f000000600000006100000062000000630000006400000065000000660000006700000068000000690000006a0000006b0000006c0000006d0000006e0000006f000000700000007100000072000000730000007400000075000000760000007700000078000000790000007a0000007b0000007c0000007d0000007e0000007f000000800000008100000082000000830000008400000085000000860000008700000088000000890000008a0000008b0000008c0000008d0000008e0000008f00000090000000910000003101000032010000330100003401000035010000360100003701000038010000390100003a0100003b0100003c0100003d0100003e0100003f010000400100004101000042010000430100004401000045010000460100004701000048010000490100004a0100004b0100004c0100004d0100004e0100004f010000500100005101000052010000530100005401000055010000560100005701000058010000590100005a0100005b0100005c0100005d0100005e0100005f010000600100006101000062010000630100006401000065010000660100006701000068010000690100006a0100006b0100006c0100006d0100006e0100006f010000700100007101000072010000730100007401000075010000760100007701000078010000790100007a0100007b0100007c0100007d0100007e0100007f010000800100008101000082010000830100008401000085010000860100008701000088010000890100008a0100008b0100008c0100008d0100008e0100008f010000900100009101000092010000930100009401000095010000960100009701000098010000990100009a0100009d0100009e0100009f010000a0010000a1010000a2010000a3010000a4010000a5010000a6010000a7010000a8010000a9010000aa010000ab010000ac010000ad010000ae010000af010000b0010000b1010000b2010000b3010000b4010000b5010000b6010000b7010000b8010000b9010000ba010000bb010000bc010000bd010000be010000bf010000c0010000c1010000c2010000c3010000c4010000c5010000c6010000c7010000c8010000c9010000ca010000cb010000cc010000cd010000ce010000cf010000d0010000d1010000d2010000d3010000d4010000d5010000d6010000d7010000d8010000d9010000da010000db010000dc010000dd010000de010000df010000e0010000e1010000e2010000e3010000e4010000e5010000e6010000e7010000e8010000e9010000ea010000eb010000ec010000ed010000ee010000ef010000f0010000f1010000f2010000f3010000f4010000f5010000f6010000f7010000f8010000f9010000fa010000fb010000fc010000fd010000fe010000ff010000000200000102000002020000030200000402000005020000060200000702000008020000090200000a0200000b0200000c0200000d0200000e0200000f020000100200001102000012020000130200001402000015020000160200001702000018020000190200001a0200001b0200001c0200001d0200001e0200001f020000200200002102000022020000230200002402000025020000260200002702000028020000290200002a0200002b0200002c0200002d0200002e0200002f020000300200003102000032020000330200003402000035020000360200003702000038020000390200003a0200003b0200003c0200003d0200003e0200003f020000400200004102000042020000430200004402000045020000460200004702000048020000490200004a0200004b0200004c0200004d0200004e0200004f020000500200005102000052020000530200005402000055020000560200005702000058020000590200005a0200005b0200005c0200005d0200005e0200005f020000600200006102000062020000630200006402000065020000660200006702000068020000690200006a0200006b0200006c0200006d0200006e0200006f020000700200007102000072020000730200007402000075020000760200007702000078020000790200007a0200007b0200007c0200007d0200007e0200007f020000800200008102000082020000830200008402000085020000860200008702000088020000890200008a0200008b0200008c0200008d0200008e0200008f020000900200009102000092020000930200009402000095020000960200009702000098020000990200009a0200009b0200009c0200009d0200009e0200009f020000a0020000a1020000a2020000a3020000a4020000a5020000a6020000a7020000a8020000a9020000aa020000ab020000ac020000ad020000ae020000af020000
+  assetHash:
+    serializedVersion: 2
+    Hash: d6cfabeb6cbfec27231af89c2cf48775
+  longitude: -105.283
+  latitude: 40.017
+  northCorrection: -0
+  fileUnit: 0
+  sketchUpImportData:
+    defaultCamera:
+      position: {x: 154.63985, y: 81.45004, z: 193.6544}
+      lookAt: {x: -125.6336, y: -117.287025, z: -95.68536}
+      up: {x: -0.30783328, y: 0.8967985, z: -0.3177911}
+      fov: 35
+      aspectRatio: 0
+      orthoSize: 1
+      isPerspective: 1
+    scenes: []
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: bar1
+    100004: bar1 1
+    100006: bar1 10
+    100008: bar1 11
+    100010: bar1 12
+    100012: bar1 13
+    100014: bar1 14
+    100016: bar1 15
+    100018: bar1 16
+    100020: bar1 17
+    100022: bar1 18
+    100024: bar1 19
+    100026: bar1 2
+    100028: bar1 20
+    100030: bar1 21
+    100032: bar1 22
+    100034: bar1 23
+    100036: bar1 24
+    100038: bar1 25
+    100040: bar1 26
+    100042: bar1 27
+    100044: bar1 28
+    100046: bar1 29
+    100048: bar1 3
+    100050: bar1 30
+    100052: bar1 31
+    100054: bar1 32
+    100056: bar1 33
+    100058: bar1 34
+    100060: bar1 35
+    100062: bar1 36
+    100064: bar1 37
+    100066: bar1 38
+    100068: bar1 39
+    100070: bar1 4
+    100072: bar1 40
+    100074: bar1 41
+    100076: bar1 5
+    100078: bar1 6
+    100080: bar1 7
+    100082: bar1 8
+    100084: bar1 9
+    100086: baro baro
+    100088: baro baro 1
+    100090: baro baro 10
+    100092: baro baro 11
+    100094: baro baro 12
+    100096: baro baro 13
+    100098: baro baro 14
+    100100: baro baro 15
+    100102: baro baro 16
+    100104: baro baro 17
+    100106: baro baro 18
+    100108: baro baro 19
+    100110: baro baro 2
+    100112: baro baro 20
+    100114: baro baro 21
+    100116: baro baro 22
+    100118: baro baro 23
+    100120: baro baro 24
+    100122: baro baro 25
+    100124: baro baro 26
+    100126: baro baro 27
+    100128: baro baro 28
+    100130: baro baro 29
+    100132: baro baro 3
+    100134: baro baro 30
+    100136: baro baro 31
+    100138: baro baro 32
+    100140: baro baro 33
+    100142: baro baro 34
+    100144: baro baro 35
+    100146: baro baro 36
+    100148: baro baro 37
+    100150: baro baro 38
+    100152: baro baro 39
+    100154: baro baro 4
+    100156: baro baro 40
+    100158: baro baro 41
+    100160: baro baro 42
+    100162: baro baro 43
+    100164: baro baro 44
+    100166: baro baro 45
+    100168: baro baro 46
+    100170: baro baro 47
+    100172: baro baro 48
+    100174: baro baro 49
+    100176: baro baro 5
+    100178: baro baro 50
+    100180: baro baro 51
+    100182: baro baro 52
+    100184: baro baro 53
+    100186: baro baro 54
+    100188: baro baro 55
+    100190: baro baro 56
+    100192: baro baro 57
+    100194: baro baro 58
+    100196: baro baro 59
+    100198: baro baro 6
+    100200: baro baro 7
+    100202: baro baro 8
+    100204: baro baro 9
+    100206: Component#10
+    100208: Component#10 1
+    100210: Component#10 10
+    100212: Component#10 11
+    100214: Component#10 2
+    100216: Component#10 3
+    100218: Component#10 4
+    100220: Component#10 5
+    100222: Component#10 6
+    100224: Component#10 7
+    100226: Component#10 8
+    100228: Component#10 9
+    100230: Component#11
+    100232: Component#11 1
+    100234: Component#11 2
+    100236: Component#12
+    100238: Component#12 1
+    100240: Component#13
+    100242: Component#13 1
+    100244: Component#13 10
+    100246: Component#13 11
+    100248: Component#13 12
+    100250: Component#13 13
+    100252: Component#13 14
+    100254: Component#13 15
+    100256: Component#13 16
+    100258: Component#13 17
+    100260: Component#13 18
+    100262: Component#13 19
+    100264: Component#13 2
+    100266: Component#13 20
+    100268: Component#13 21
+    100270: Component#13 22
+    100272: Component#13 23
+    100274: Component#13 24
+    100276: Component#13 25
+    100278: Component#13 26
+    100280: Component#13 27
+    100282: Component#13 28
+    100284: Component#13 29
+    100286: Component#13 3
+    100288: Component#13 30
+    100290: Component#13 31
+    100292: Component#13 32
+    100294: Component#13 33
+    100296: Component#13 34
+    100298: Component#13 35
+    100300: Component#13 36
+    100302: Component#13 37
+    100304: Component#13 38
+    100306: Component#13 4
+    100308: Component#13 5
+    100310: Component#13 6
+    100312: Component#13 7
+    100314: Component#13 8
+    100316: Component#13 9
+    100318: Component#15
+    100320: Component#15 1
+    100322: Component#15 10
+    100324: Component#15 11
+    100326: Component#15 12
+    100328: Component#15 13
+    100330: Component#15 14
+    100332: Component#15 15
+    100334: Component#15 16
+    100336: Component#15 17
+    100338: Component#15 18
+    100340: Component#15 19
+    100342: Component#15 2
+    100344: Component#15 20
+    100346: Component#15 21
+    100348: Component#15 22
+    100350: Component#15 23
+    100352: Component#15 24
+    100354: Component#15 25
+    100356: Component#15 26
+    100358: Component#15 27
+    100360: Component#15 28
+    100362: Component#15 3
+    100364: Component#15 4
+    100366: Component#15 5
+    100368: Component#15 6
+    100370: Component#15 7
+    100372: Component#15 8
+    100374: Component#15 9
+    100376: Group 10
+    100378: Group 100
+    100380: Group 102
+    100382: Group 104
+    100384: Group 106
+    100386: Group 108
+    100388: Group 110
+    100390: Group 112
+    100392: Group 114
+    100394: Group 116
+    100396: Group 118
+    100398: Group 12
+    100400: Group 120
+    100402: Group 122
+    100404: Group 124
+    100406: Group 126
+    100408: Group 128
+    100410: Group 130
+    100412: Group 132
+    100414: Group 134
+    100416: Group 136
+    100418: Group 138
+    100420: Group 14
+    100422: Group 140
+    100424: Group 142
+    100426: Group 144
+    100428: Group 15
+    100430: Group 17
+    100432: Group 18
+    100434: Group 2
+    100436: Group 20
+    100438: Group 22
+    100440: Group 24
+    100442: Group 26
+    100444: Group 28
+    100446: Group 30
+    100448: Group 32
+    100450: Group 34
+    100452: Group 36
+    100454: Group 38
+    100456: Group 4
+    100458: Group 40
+    100460: Group 414
+    100462: Group 42
+    100464: Group 44
+    100466: Group 46
+    100468: Group 48
+    100470: Group 50
+    100472: Group 52
+    100474: Group 54
+    100476: Group 56
+    100478: Group 58
+    100480: Group 6
+    100482: Group 60
+    100484: Group 62
+    100486: Group 64
+    100488: Group 66
+    100490: Group 68
+    100492: Group 70
+    100494: Group 72
+    100496: Group 74
+    100498: Group 76
+    100500: Group 78
+    100502: Group 8
+    100504: Group 80
+    100506: Group 81
+    100508: Group 83
+    100510: Group 84
+    100512: Group 86
+    100514: Group 88
+    100516: Group 90
+    100518: Group 92
+    100520: Group 94
+    100522: Group 96
+    100524: Group 98
+    100526: jack walker stan
+    100528: jack walker stan 1
+    100530: player tunnel[1]
+    400000: //RootNode
+    400002: bar1
+    400004: bar1 1
+    400006: bar1 10
+    400008: bar1 11
+    400010: bar1 12
+    400012: bar1 13
+    400014: bar1 14
+    400016: bar1 15
+    400018: bar1 16
+    400020: bar1 17
+    400022: bar1 18
+    400024: bar1 19
+    400026: bar1 2
+    400028: bar1 20
+    400030: bar1 21
+    400032: bar1 22
+    400034: bar1 23
+    400036: bar1 24
+    400038: bar1 25
+    400040: bar1 26
+    400042: bar1 27
+    400044: bar1 28
+    400046: bar1 29
+    400048: bar1 3
+    400050: bar1 30
+    400052: bar1 31
+    400054: bar1 32
+    400056: bar1 33
+    400058: bar1 34
+    400060: bar1 35
+    400062: bar1 36
+    400064: bar1 37
+    400066: bar1 38
+    400068: bar1 39
+    400070: bar1 4
+    400072: bar1 40
+    400074: bar1 41
+    400076: bar1 5
+    400078: bar1 6
+    400080: bar1 7
+    400082: bar1 8
+    400084: bar1 9
+    400086: baro baro
+    400088: baro baro 1
+    400090: baro baro 10
+    400092: baro baro 11
+    400094: baro baro 12
+    400096: baro baro 13
+    400098: baro baro 14
+    400100: baro baro 15
+    400102: baro baro 16
+    400104: baro baro 17
+    400106: baro baro 18
+    400108: baro baro 19
+    400110: baro baro 2
+    400112: baro baro 20
+    400114: baro baro 21
+    400116: baro baro 22
+    400118: baro baro 23
+    400120: baro baro 24
+    400122: baro baro 25
+    400124: baro baro 26
+    400126: baro baro 27
+    400128: baro baro 28
+    400130: baro baro 29
+    400132: baro baro 3
+    400134: baro baro 30
+    400136: baro baro 31
+    400138: baro baro 32
+    400140: baro baro 33
+    400142: baro baro 34
+    400144: baro baro 35
+    400146: baro baro 36
+    400148: baro baro 37
+    400150: baro baro 38
+    400152: baro baro 39
+    400154: baro baro 4
+    400156: baro baro 40
+    400158: baro baro 41
+    400160: baro baro 42
+    400162: baro baro 43
+    400164: baro baro 44
+    400166: baro baro 45
+    400168: baro baro 46
+    400170: baro baro 47
+    400172: baro baro 48
+    400174: baro baro 49
+    400176: baro baro 5
+    400178: baro baro 50
+    400180: baro baro 51
+    400182: baro baro 52
+    400184: baro baro 53
+    400186: baro baro 54
+    400188: baro baro 55
+    400190: baro baro 56
+    400192: baro baro 57
+    400194: baro baro 58
+    400196: baro baro 59
+    400198: baro baro 6
+    400200: baro baro 7
+    400202: baro baro 8
+    400204: baro baro 9
+    400206: Component#10
+    400208: Component#10 1
+    400210: Component#10 10
+    400212: Component#10 11
+    400214: Component#10 2
+    400216: Component#10 3
+    400218: Component#10 4
+    400220: Component#10 5
+    400222: Component#10 6
+    400224: Component#10 7
+    400226: Component#10 8
+    400228: Component#10 9
+    400230: Component#11
+    400232: Component#11 1
+    400234: Component#11 2
+    400236: Component#12
+    400238: Component#12 1
+    400240: Component#13
+    400242: Component#13 1
+    400244: Component#13 10
+    400246: Component#13 11
+    400248: Component#13 12
+    400250: Component#13 13
+    400252: Component#13 14
+    400254: Component#13 15
+    400256: Component#13 16
+    400258: Component#13 17
+    400260: Component#13 18
+    400262: Component#13 19
+    400264: Component#13 2
+    400266: Component#13 20
+    400268: Component#13 21
+    400270: Component#13 22
+    400272: Component#13 23
+    400274: Component#13 24
+    400276: Component#13 25
+    400278: Component#13 26
+    400280: Component#13 27
+    400282: Component#13 28
+    400284: Component#13 29
+    400286: Component#13 3
+    400288: Component#13 30
+    400290: Component#13 31
+    400292: Component#13 32
+    400294: Component#13 33
+    400296: Component#13 34
+    400298: Component#13 35
+    400300: Component#13 36
+    400302: Component#13 37
+    400304: Component#13 38
+    400306: Component#13 4
+    400308: Component#13 5
+    400310: Component#13 6
+    400312: Component#13 7
+    400314: Component#13 8
+    400316: Component#13 9
+    400318: Component#15
+    400320: Component#15 1
+    400322: Component#15 10
+    400324: Component#15 11
+    400326: Component#15 12
+    400328: Component#15 13
+    400330: Component#15 14
+    400332: Component#15 15
+    400334: Component#15 16
+    400336: Component#15 17
+    400338: Component#15 18
+    400340: Component#15 19
+    400342: Component#15 2
+    400344: Component#15 20
+    400346: Component#15 21
+    400348: Component#15 22
+    400350: Component#15 23
+    400352: Component#15 24
+    400354: Component#15 25
+    400356: Component#15 26
+    400358: Component#15 27
+    400360: Component#15 28
+    400362: Component#15 3
+    400364: Component#15 4
+    400366: Component#15 5
+    400368: Component#15 6
+    400370: Component#15 7
+    400372: Component#15 8
+    400374: Component#15 9
+    400376: Group 10
+    400378: Group 100
+    400380: Group 102
+    400382: Group 104
+    400384: Group 106
+    400386: Group 108
+    400388: Group 110
+    400390: Group 112
+    400392: Group 114
+    400394: Group 116
+    400396: Group 118
+    400398: Group 12
+    400400: Group 120
+    400402: Group 122
+    400404: Group 124
+    400406: Group 126
+    400408: Group 128
+    400410: Group 130
+    400412: Group 132
+    400414: Group 134
+    400416: Group 136
+    400418: Group 138
+    400420: Group 14
+    400422: Group 140
+    400424: Group 142
+    400426: Group 144
+    400428: Group 15
+    400430: Group 17
+    400432: Group 18
+    400434: Group 2
+    400436: Group 20
+    400438: Group 22
+    400440: Group 24
+    400442: Group 26
+    400444: Group 28
+    400446: Group 30
+    400448: Group 32
+    400450: Group 34
+    400452: Group 36
+    400454: Group 38
+    400456: Group 4
+    400458: Group 40
+    400460: Group 414
+    400462: Group 42
+    400464: Group 44
+    400466: Group 46
+    400468: Group 48
+    400470: Group 50
+    400472: Group 52
+    400474: Group 54
+    400476: Group 56
+    400478: Group 58
+    400480: Group 6
+    400482: Group 60
+    400484: Group 62
+    400486: Group 64
+    400488: Group 66
+    400490: Group 68
+    400492: Group 70
+    400494: Group 72
+    400496: Group 74
+    400498: Group 76
+    400500: Group 78
+    400502: Group 8
+    400504: Group 80
+    400506: Group 81
+    400508: Group 83
+    400510: Group 84
+    400512: Group 86
+    400514: Group 88
+    400516: Group 90
+    400518: Group 92
+    400520: Group 94
+    400522: Group 96
+    400524: Group 98
+    400526: jack walker stan
+    400528: jack walker stan 1
+    400530: player tunnel[1]
+    2100000: _defaultMat
+    2100002: _6
+    2100004: '[Asphalt_New]3'
+    2100006: _157
+    2100008: '[Brick_Antique]'
+    2100010: _156
+    2100012: _168
+    2100014: _76
+    2100016: _161
+    2100018: _77
+    2100020: _15
+    2100022: _38
+    2100024: '[Fencing_Picket_Concave]'
+    2100026: _164
+    2100028: _87
+    2100030: _19
+    2100032: _171
+    2100034: '[Color_000]1'
+    2100036: _78
+    2100038: 7
+    2100040: _88
+    2100042: '[Color_003]'
+    2100044: _144
+    2100046: _81
+    2100048: _92
+    2100050: _Charcoal_
+    2100052: _95
+    2100054: _93
+    2100056: _31
+    2100058: _89
+    2100060: _82
+    2100062: '[Metal_Rough]1'
+    2100064: _103
+    2100066: _141
+    2100068: _90
+    2100070: '[Translucent_Glass_Gray]1'
+    2100072: _94
+    2100074: '[Asphalt_New]1'
+    2100076: _149
+    2100078: _22
+    2100080: _153
+    2100082: _173
+    2100084: '[Metal_Rough]2'
+    2100086: _155
+    2100088: '[Groundcover_Sand_Smooth]1'
+    2100090: 9th-place
+    2100092: '[Metal_Aluminum_Anodized]1'
+    2100094: _175
+    2100096: _174
+    2100098: '[Wood_Cherry_Original]'
+    2100100: _176
+    2100102: _182
+    2100104: _177
+    2100106: _137
+    2100108: _29
+    2100110: _178
+    2100112: '[Asphalt_New]'
+    2100114: _179
+    2100116: '[Metal_Seamed]1'
+    2100118: _119
+    2100120: _181
+    2100122: _99
+    2100124: '[Fencing_Metal_Straight]1'
+    2100126: _188
+    2100128: _200
+    2100130: _193
+    2100132: _192
+    2100134: _187
+    2100136: _191
+    2100138: _186
+    2100140: _190
+    2100142: _185
+    2100144: _189
+    2100146: _184
+    2100148: _104
+    2100150: _183
+    2100152: _194
+    2100154: _199
+    2100156: _198
+    2100158: _197
+    2100160: _196
+    2100162: _195
+    2100164: '[Vegetation_Grass_Artificial]3'
+    2100166: _203
+    2100168: _110
+    2100170: _147
+    2100172: '[Blinds_Roman_Hobbled_Blue]1'
+    2100174: _201
+    2100176: _105
+    2100178: _114
+    2100180: _204
+    2100182: _150
+    2100184: _148
+    2100186: _11
+    2100188: _Black_
+    2100190: _12
+    2100192: '[Metal_Rough]3'
+    2100194: '[Translucent_Glass_Gold]'
+    2100196: _205
+    2100198: _79
+    2100200: '[Translucent_Glass_Gray]2'
+    2100202: _159
+    2100204: _172
+    2100206: _169
+    2300000: //RootNode
+    2300002: bar1
+    2300004: bar1 1
+    2300006: bar1 10
+    2300008: bar1 11
+    2300010: bar1 12
+    2300012: bar1 13
+    2300014: bar1 14
+    2300016: bar1 15
+    2300018: bar1 16
+    2300020: bar1 17
+    2300022: bar1 18
+    2300024: bar1 19
+    2300026: bar1 2
+    2300028: bar1 20
+    2300030: bar1 21
+    2300032: bar1 22
+    2300034: bar1 23
+    2300036: bar1 24
+    2300038: bar1 25
+    2300040: bar1 26
+    2300042: bar1 27
+    2300044: bar1 28
+    2300046: bar1 29
+    2300048: bar1 3
+    2300050: bar1 30
+    2300052: bar1 31
+    2300054: bar1 32
+    2300056: bar1 33
+    2300058: bar1 34
+    2300060: bar1 35
+    2300062: bar1 36
+    2300064: bar1 37
+    2300066: bar1 38
+    2300068: bar1 39
+    2300070: bar1 4
+    2300072: bar1 40
+    2300074: bar1 41
+    2300076: bar1 5
+    2300078: bar1 6
+    2300080: bar1 7
+    2300082: bar1 8
+    2300084: bar1 9
+    2300086: baro baro
+    2300088: baro baro 1
+    2300090: baro baro 10
+    2300092: baro baro 11
+    2300094: baro baro 12
+    2300096: baro baro 13
+    2300098: baro baro 14
+    2300100: baro baro 15
+    2300102: baro baro 16
+    2300104: baro baro 17
+    2300106: baro baro 18
+    2300108: baro baro 19
+    2300110: baro baro 2
+    2300112: baro baro 20
+    2300114: baro baro 21
+    2300116: baro baro 22
+    2300118: baro baro 23
+    2300120: baro baro 24
+    2300122: baro baro 25
+    2300124: baro baro 26
+    2300126: baro baro 27
+    2300128: baro baro 28
+    2300130: baro baro 29
+    2300132: baro baro 3
+    2300134: baro baro 30
+    2300136: baro baro 31
+    2300138: baro baro 32
+    2300140: baro baro 33
+    2300142: baro baro 34
+    2300144: baro baro 35
+    2300146: baro baro 36
+    2300148: baro baro 37
+    2300150: baro baro 38
+    2300152: baro baro 39
+    2300154: baro baro 4
+    2300156: baro baro 40
+    2300158: baro baro 41
+    2300160: baro baro 42
+    2300162: baro baro 43
+    2300164: baro baro 44
+    2300166: baro baro 45
+    2300168: baro baro 46
+    2300170: baro baro 47
+    2300172: baro baro 48
+    2300174: baro baro 49
+    2300176: baro baro 5
+    2300178: baro baro 50
+    2300180: baro baro 51
+    2300182: baro baro 52
+    2300184: baro baro 53
+    2300186: baro baro 54
+    2300188: baro baro 55
+    2300190: baro baro 56
+    2300192: baro baro 57
+    2300194: baro baro 58
+    2300196: baro baro 59
+    2300198: baro baro 6
+    2300200: baro baro 7
+    2300202: baro baro 8
+    2300204: baro baro 9
+    2300206: Component#10
+    2300208: Component#10 1
+    2300210: Component#10 10
+    2300212: Component#10 11
+    2300214: Component#10 2
+    2300216: Component#10 3
+    2300218: Component#10 4
+    2300220: Component#10 5
+    2300222: Component#10 6
+    2300224: Component#10 7
+    2300226: Component#10 8
+    2300228: Component#10 9
+    2300230: Component#11
+    2300232: Component#11 1
+    2300234: Component#11 2
+    2300236: Component#12
+    2300238: Component#12 1
+    2300240: Component#13
+    2300242: Component#13 1
+    2300244: Component#13 10
+    2300246: Component#13 11
+    2300248: Component#13 12
+    2300250: Component#13 13
+    2300252: Component#13 14
+    2300254: Component#13 15
+    2300256: Component#13 16
+    2300258: Component#13 17
+    2300260: Component#13 18
+    2300262: Component#13 19
+    2300264: Component#13 2
+    2300266: Component#13 20
+    2300268: Component#13 21
+    2300270: Component#13 22
+    2300272: Component#13 23
+    2300274: Component#13 24
+    2300276: Component#13 25
+    2300278: Component#13 26
+    2300280: Component#13 27
+    2300282: Component#13 28
+    2300284: Component#13 29
+    2300286: Component#13 3
+    2300288: Component#13 30
+    2300290: Component#13 31
+    2300292: Component#13 32
+    2300294: Component#13 33
+    2300296: Component#13 34
+    2300298: Component#13 35
+    2300300: Component#13 36
+    2300302: Component#13 37
+    2300304: Component#13 38
+    2300306: Component#13 4
+    2300308: Component#13 5
+    2300310: Component#13 6
+    2300312: Component#13 7
+    2300314: Component#13 8
+    2300316: Component#13 9
+    2300318: Component#15
+    2300320: Component#15 1
+    2300322: Component#15 10
+    2300324: Component#15 11
+    2300326: Component#15 12
+    2300328: Component#15 13
+    2300330: Component#15 14
+    2300332: Component#15 15
+    2300334: Component#15 16
+    2300336: Component#15 17
+    2300338: Component#15 18
+    2300340: Component#15 19
+    2300342: Component#15 2
+    2300344: Component#15 20
+    2300346: Component#15 21
+    2300348: Component#15 22
+    2300350: Component#15 23
+    2300352: Component#15 24
+    2300354: Component#15 25
+    2300356: Component#15 26
+    2300358: Component#15 27
+    2300360: Component#15 28
+    2300362: Component#15 3
+    2300364: Component#15 4
+    2300366: Component#15 5
+    2300368: Component#15 6
+    2300370: Component#15 7
+    2300372: Component#15 8
+    2300374: Component#15 9
+    2300376: Group 10
+    2300378: Group 100
+    2300380: Group 102
+    2300382: Group 104
+    2300384: Group 106
+    2300386: Group 108
+    2300388: Group 110
+    2300390: Group 112
+    2300392: Group 114
+    2300394: Group 116
+    2300396: Group 118
+    2300398: Group 12
+    2300400: Group 120
+    2300402: Group 122
+    2300404: Group 124
+    2300406: Group 126
+    2300408: Group 128
+    2300410: Group 130
+    2300412: Group 132
+    2300414: Group 134
+    2300416: Group 136
+    2300418: Group 138
+    2300420: Group 140
+    2300422: Group 142
+    2300424: Group 144
+    2300426: Group 15
+    2300428: Group 18
+    2300430: Group 2
+    2300432: Group 20
+    2300434: Group 22
+    2300436: Group 24
+    2300438: Group 26
+    2300440: Group 28
+    2300442: Group 30
+    2300444: Group 32
+    2300446: Group 34
+    2300448: Group 36
+    2300450: Group 38
+    2300452: Group 4
+    2300454: Group 40
+    2300456: Group 414
+    2300458: Group 42
+    2300460: Group 44
+    2300462: Group 46
+    2300464: Group 48
+    2300466: Group 50
+    2300468: Group 52
+    2300470: Group 54
+    2300472: Group 56
+    2300474: Group 58
+    2300476: Group 6
+    2300478: Group 60
+    2300480: Group 62
+    2300482: Group 64
+    2300484: Group 66
+    2300486: Group 68
+    2300488: Group 70
+    2300490: Group 72
+    2300492: Group 74
+    2300494: Group 76
+    2300496: Group 78
+    2300498: Group 8
+    2300500: Group 81
+    2300502: Group 84
+    2300504: Group 86
+    2300506: Group 88
+    2300508: Group 90
+    2300510: Group 92
+    2300512: Group 94
+    2300514: Group 96
+    2300516: Group 98
+    2300518: jack walker stan
+    2300520: jack walker stan 1
+    3300000: //RootNode
+    3300002: bar1
+    3300004: bar1 1
+    3300006: bar1 10
+    3300008: bar1 11
+    3300010: bar1 12
+    3300012: bar1 13
+    3300014: bar1 14
+    3300016: bar1 15
+    3300018: bar1 16
+    3300020: bar1 17
+    3300022: bar1 18
+    3300024: bar1 19
+    3300026: bar1 2
+    3300028: bar1 20
+    3300030: bar1 21
+    3300032: bar1 22
+    3300034: bar1 23
+    3300036: bar1 24
+    3300038: bar1 25
+    3300040: bar1 26
+    3300042: bar1 27
+    3300044: bar1 28
+    3300046: bar1 29
+    3300048: bar1 3
+    3300050: bar1 30
+    3300052: bar1 31
+    3300054: bar1 32
+    3300056: bar1 33
+    3300058: bar1 34
+    3300060: bar1 35
+    3300062: bar1 36
+    3300064: bar1 37
+    3300066: bar1 38
+    3300068: bar1 39
+    3300070: bar1 4
+    3300072: bar1 40
+    3300074: bar1 41
+    3300076: bar1 5
+    3300078: bar1 6
+    3300080: bar1 7
+    3300082: bar1 8
+    3300084: bar1 9
+    3300086: baro baro
+    3300088: baro baro 1
+    3300090: baro baro 10
+    3300092: baro baro 11
+    3300094: baro baro 12
+    3300096: baro baro 13
+    3300098: baro baro 14
+    3300100: baro baro 15
+    3300102: baro baro 16
+    3300104: baro baro 17
+    3300106: baro baro 18
+    3300108: baro baro 19
+    3300110: baro baro 2
+    3300112: baro baro 20
+    3300114: baro baro 21
+    3300116: baro baro 22
+    3300118: baro baro 23
+    3300120: baro baro 24
+    3300122: baro baro 25
+    3300124: baro baro 26
+    3300126: baro baro 27
+    3300128: baro baro 28
+    3300130: baro baro 29
+    3300132: baro baro 3
+    3300134: baro baro 30
+    3300136: baro baro 31
+    3300138: baro baro 32
+    3300140: baro baro 33
+    3300142: baro baro 34
+    3300144: baro baro 35
+    3300146: baro baro 36
+    3300148: baro baro 37
+    3300150: baro baro 38
+    3300152: baro baro 39
+    3300154: baro baro 4
+    3300156: baro baro 40
+    3300158: baro baro 41
+    3300160: baro baro 42
+    3300162: baro baro 43
+    3300164: baro baro 44
+    3300166: baro baro 45
+    3300168: baro baro 46
+    3300170: baro baro 47
+    3300172: baro baro 48
+    3300174: baro baro 49
+    3300176: baro baro 5
+    3300178: baro baro 50
+    3300180: baro baro 51
+    3300182: baro baro 52
+    3300184: baro baro 53
+    3300186: baro baro 54
+    3300188: baro baro 55
+    3300190: baro baro 56
+    3300192: baro baro 57
+    3300194: baro baro 58
+    3300196: baro baro 59
+    3300198: baro baro 6
+    3300200: baro baro 7
+    3300202: baro baro 8
+    3300204: baro baro 9
+    3300206: Component#10
+    3300208: Component#10 1
+    3300210: Component#10 10
+    3300212: Component#10 11
+    3300214: Component#10 2
+    3300216: Component#10 3
+    3300218: Component#10 4
+    3300220: Component#10 5
+    3300222: Component#10 6
+    3300224: Component#10 7
+    3300226: Component#10 8
+    3300228: Component#10 9
+    3300230: Component#11
+    3300232: Component#11 1
+    3300234: Component#11 2
+    3300236: Component#12
+    3300238: Component#12 1
+    3300240: Component#13
+    3300242: Component#13 1
+    3300244: Component#13 10
+    3300246: Component#13 11
+    3300248: Component#13 12
+    3300250: Component#13 13
+    3300252: Component#13 14
+    3300254: Component#13 15
+    3300256: Component#13 16
+    3300258: Component#13 17
+    3300260: Component#13 18
+    3300262: Component#13 19
+    3300264: Component#13 2
+    3300266: Component#13 20
+    3300268: Component#13 21
+    3300270: Component#13 22
+    3300272: Component#13 23
+    3300274: Component#13 24
+    3300276: Component#13 25
+    3300278: Component#13 26
+    3300280: Component#13 27
+    3300282: Component#13 28
+    3300284: Component#13 29
+    3300286: Component#13 3
+    3300288: Component#13 30
+    3300290: Component#13 31
+    3300292: Component#13 32
+    3300294: Component#13 33
+    3300296: Component#13 34
+    3300298: Component#13 35
+    3300300: Component#13 36
+    3300302: Component#13 37
+    3300304: Component#13 38
+    3300306: Component#13 4
+    3300308: Component#13 5
+    3300310: Component#13 6
+    3300312: Component#13 7
+    3300314: Component#13 8
+    3300316: Component#13 9
+    3300318: Component#15
+    3300320: Component#15 1
+    3300322: Component#15 10
+    3300324: Component#15 11
+    3300326: Component#15 12
+    3300328: Component#15 13
+    3300330: Component#15 14
+    3300332: Component#15 15
+    3300334: Component#15 16
+    3300336: Component#15 17
+    3300338: Component#15 18
+    3300340: Component#15 19
+    3300342: Component#15 2
+    3300344: Component#15 20
+    3300346: Component#15 21
+    3300348: Component#15 22
+    3300350: Component#15 23
+    3300352: Component#15 24
+    3300354: Component#15 25
+    3300356: Component#15 26
+    3300358: Component#15 27
+    3300360: Component#15 28
+    3300362: Component#15 3
+    3300364: Component#15 4
+    3300366: Component#15 5
+    3300368: Component#15 6
+    3300370: Component#15 7
+    3300372: Component#15 8
+    3300374: Component#15 9
+    3300376: Group 10
+    3300378: Group 100
+    3300380: Group 102
+    3300382: Group 104
+    3300384: Group 106
+    3300386: Group 108
+    3300388: Group 110
+    3300390: Group 112
+    3300392: Group 114
+    3300394: Group 116
+    3300396: Group 118
+    3300398: Group 12
+    3300400: Group 120
+    3300402: Group 122
+    3300404: Group 124
+    3300406: Group 126
+    3300408: Group 128
+    3300410: Group 130
+    3300412: Group 132
+    3300414: Group 134
+    3300416: Group 136
+    3300418: Group 138
+    3300420: Group 140
+    3300422: Group 142
+    3300424: Group 144
+    3300426: Group 15
+    3300428: Group 18
+    3300430: Group 2
+    3300432: Group 20
+    3300434: Group 22
+    3300436: Group 24
+    3300438: Group 26
+    3300440: Group 28
+    3300442: Group 30
+    3300444: Group 32
+    3300446: Group 34
+    3300448: Group 36
+    3300450: Group 38
+    3300452: Group 4
+    3300454: Group 40
+    3300456: Group 414
+    3300458: Group 42
+    3300460: Group 44
+    3300462: Group 46
+    3300464: Group 48
+    3300466: Group 50
+    3300468: Group 52
+    3300470: Group 54
+    3300472: Group 56
+    3300474: Group 58
+    3300476: Group 6
+    3300478: Group 60
+    3300480: Group 62
+    3300482: Group 64
+    3300484: Group 66
+    3300486: Group 68
+    3300488: Group 70
+    3300490: Group 72
+    3300492: Group 74
+    3300494: Group 76
+    3300496: Group 78
+    3300498: Group 8
+    3300500: Group 81
+    3300502: Group 84
+    3300504: Group 86
+    3300506: Group 88
+    3300508: Group 90
+    3300510: Group 92
+    3300512: Group 94
+    3300514: Group 96
+    3300516: Group 98
+    3300518: jack walker stan
+    3300520: jack walker stan 1
+    4300000: Mesh 3d-model
+    4300002: Mesh Group 2
+    4300004: Mesh Group 4
+    4300006: Mesh Group 6
+    4300008: Mesh Group 15
+    4300010: Mesh Group 18
+    4300012: Mesh Group 20
+    4300014: Mesh Group 54
+    4300016: Mesh Group 74
+    4300018: Mesh Component#10
+    4300020: Mesh bar1
+    4300022: Mesh baro baro
+    4300024: Mesh Component#11
+    4300026: Mesh Group 414
+    4300028: Mesh Component#12
+    4300030: Mesh Component#13
+    4300032: Mesh jack walker stan
+    4300034: Mesh Component#15
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.0254
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
