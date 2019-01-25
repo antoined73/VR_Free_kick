@@ -6,41 +6,22 @@ public class GameManager : MonoBehaviour
 {
     public List<Camera> cameras;
 
-    private string roleChoosen;
+    private Role roleChoosen;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void choiceRole(string role)
+    public void choiceRole(Role role)
     {
         disableAllCameras();
-        if(role == "buteur")
+        this.roleChoosen = role;
+        switch (role)
         {
-            cameras[0].enabled = true;
-            roleChoosen = "buteur";
-        }
-        else if (role == "mur")
-        {
-            cameras[2].enabled = true;
-            roleChoosen = "mur";
-        }
-        else if (role == "gardien")
-        {
-            cameras[1].enabled = true;
-            roleChoosen = "gardien";
+            case Role.Goal : cameras[1].enabled = true; return;
+            case Role.Shooter : cameras[0].enabled = true; return;
+            case Role.Defender : cameras[2].enabled = true; return;
+            default : return;
         }
     }
 
-    public string getRoleChoosen()
+    public Role getRoleChoosen()
     {
         return roleChoosen;
     }
