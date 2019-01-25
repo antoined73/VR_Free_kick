@@ -1084,7 +1084,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1164320761}
@@ -2410,7 +2410,7 @@ MonoBehaviour:
   shootDirection: 0
   shootPower: 5
   target: {x: 0, y: 0}
-  targetSetted: 0
+  targetSettled: 0
   cameras:
   - {fileID: 534669904}
   - {fileID: 833704590}
@@ -2989,10 +2989,10 @@ Canvas:
   m_GameObject: {fileID: 1783846835}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_RenderMode: 1
+  m_Camera: {fileID: 534669904}
+  m_PlaneDistance: 3.8
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -3417,9 +3417,9 @@ RectTransform:
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -0.172, y: -0.172, z: 90.025}
   m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 279, y: -33}
-  m_SizeDelta: {x: 250, y: 20}
+  m_AnchorMax: {x: 0.9172029, y: 0.5}
+  m_AnchoredPosition: {x: 135, y: -33}
+  m_SizeDelta: {x: -38, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2106731502
 MonoBehaviour:
