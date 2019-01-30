@@ -10,32 +10,15 @@ public class Menu : MonoBehaviour
 
     private GameObject gameController;
 
-    // Start is called before the first frame update
     void Awake()
     {
         gameController = GameObject.FindGameObjectWithTag("GameController");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        TurnOffCanvas(menuUI);
     }
 
     public void ClickOnMenu(string role)
     {
         TurnOffCanvas(menuUI);
-        switch (role)
-        {
-            case "buteur":
-                break;
-            case "mur":
-                TurnOnCanvas(defenderWallUI);
-                break;
-            case "gardien":
-                break;
-        }
-        gameController.GetComponent<GameManager>().choiceRole(role);
     }
 
     private void TurnOnCanvas(CanvasGroup canvas)

@@ -12,14 +12,22 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        objectsTransform = (Replay[]) FindObjectsOfType(typeof(Replay));
-        objectsTransform[0].startRecording();
-        Debug.Log("start");
-        Task.Delay(5000).ContinueWith((task) => {
-            Debug.Log("stop");
-            objectsTransform[0].stopRecording();
-            objectsTransform[0].startPlayingBack();
-        });
+        //launchRecording();        
+    }
+
+    private void launchRecording()
+    {
+        objectsTransform = (Replay[])FindObjectsOfType(typeof(Replay));
+        if (objectsTransform.Length > 0)
+        {
+            objectsTransform[0].startRecording();
+            Debug.Log("start");
+            Task.Delay(5000).ContinueWith((task) => {
+                Debug.Log("stop");
+                objectsTransform[0].stopRecording();
+                objectsTransform[0].startPlayingBack();
+            });
+        }
     }
 
     public void choiceRole(Role role)
@@ -28,9 +36,9 @@ public class GameManager : MonoBehaviour
         this.roleChoosen = role;
         switch (role)
         {
-            case Role.Goal : cameras[1].enabled = true; return;
+            case Role.Goal : cameras[0].enabled = true; return;
             case Role.Shooter : cameras[3].enabled = true; return;
-            case Role.Defender : cameras[2].enabled = true; return;
+            case Role.Defender : cameras[1].enabled = true; return;
             default : return;
         }
     }
