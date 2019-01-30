@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
         switch (role)
         {
             case Role.Goal : cameras[1].enabled = true; return;
-            case Role.Shooter : cameras[0].enabled = true; return;
+            case Role.Shooter : cameras[3].enabled = true; return;
             case Role.Defender : cameras[2].enabled = true; return;
             default : return;
         }
