@@ -4,13 +4,14 @@ using UnityEngine;
 
 namespace BeardedManStudios.Forge.Networking.Generated
 {
-	[GeneratedRPC("{\"types\":[[]]")]
-	[GeneratedRPCVariableNames("{\"types\":[[]]")]
-	public abstract partial class ShootBalloonBehavior : NetworkBehavior
+	[GeneratedRPC("{\"types\":[[][]]")]
+	[GeneratedRPCVariableNames("{\"types\":[[][]]")]
+	public abstract partial class DefenderManagerBehavior : NetworkBehavior
 	{
-		public const byte RPC_SHOOT__R_P_C = 0 + 5;
+		public const byte RPC_GENERATE_DEFENDERS = 0 + 5;
+		public const byte RPC_JUMP = 1 + 5;
 		
-		public ShootBalloonNetworkObject networkObject = null;
+		public DefenderManagerNetworkObject networkObject = null;
 
 		public override void Initialize(NetworkObject obj)
 		{
@@ -18,11 +19,12 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			if (networkObject != null && networkObject.AttachedBehavior != null)
 				return;
 			
-			networkObject = (ShootBalloonNetworkObject)obj;
+			networkObject = (DefenderManagerNetworkObject)obj;
 			networkObject.AttachedBehavior = this;
 
 			base.SetupHelperRpcs(networkObject);
-			networkObject.RegisterRpc("Shoot_RPC", Shoot_RPC);
+			networkObject.RegisterRpc("GenerateDefenders", GenerateDefenders);
+			networkObject.RegisterRpc("Jump", Jump);
 
 			networkObject.onDestroy += DestroyGameObject;
 
@@ -80,7 +82,7 @@ namespace BeardedManStudios.Forge.Networking.Generated
 
 		public override void Initialize(NetWorker networker, byte[] metadata = null)
 		{
-			Initialize(new ShootBalloonNetworkObject(networker, createCode: TempAttachCode, metadata: metadata));
+			Initialize(new DefenderManagerNetworkObject(networker, createCode: TempAttachCode, metadata: metadata));
 		}
 
 		private void DestroyGameObject(NetWorker sender)
@@ -91,7 +93,7 @@ namespace BeardedManStudios.Forge.Networking.Generated
 
 		public override NetworkObject CreateNetworkObject(NetWorker networker, int createCode, byte[] metadata = null)
 		{
-			return new ShootBalloonNetworkObject(networker, this, createCode, metadata);
+			return new DefenderManagerNetworkObject(networker, this, createCode, metadata);
 		}
 
 		protected override void InitializedTransform()
@@ -102,7 +104,11 @@ namespace BeardedManStudios.Forge.Networking.Generated
 		/// <summary>
 		/// Arguments:
 		/// </summary>
-		public abstract void Shoot_RPC(RpcArgs args);
+		public abstract void GenerateDefenders(RpcArgs args);
+		/// <summary>
+		/// Arguments:
+		/// </summary>
+		public abstract void Jump(RpcArgs args);
 
 		// DO NOT TOUCH, THIS GETS GENERATED PLEASE EXTEND THIS CLASS IF YOU WISH TO HAVE CUSTOM CODE ADDITIONS
 	}

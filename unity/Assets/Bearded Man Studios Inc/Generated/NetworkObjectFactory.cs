@@ -31,6 +31,14 @@ namespace BeardedManStudios.Forge.Networking.Generated
 						availableCallback = true;
 						obj = new CubeForgeGameNetworkObject(networker, id, frame);
 						break;
+					case DefenderManagerNetworkObject.IDENTITY:
+						availableCallback = true;
+						obj = new DefenderManagerNetworkObject(networker, id, frame);
+						break;
+					case DefenderNetworkObject.IDENTITY:
+						availableCallback = true;
+						obj = new DefenderNetworkObject(networker, id, frame);
+						break;
 					case ExampleProximityPlayerNetworkObject.IDENTITY:
 						availableCallback = true;
 						obj = new ExampleProximityPlayerNetworkObject(networker, id, frame);
@@ -39,17 +47,21 @@ namespace BeardedManStudios.Forge.Networking.Generated
 						availableCallback = true;
 						obj = new MoveCubeNetworkObject(networker, id, frame);
 						break;
+					case MoveGoalNetworkObject.IDENTITY:
+						availableCallback = true;
+						obj = new MoveGoalNetworkObject(networker, id, frame);
+						break;
 					case NetworkCameraNetworkObject.IDENTITY:
 						availableCallback = true;
 						obj = new NetworkCameraNetworkObject(networker, id, frame);
 						break;
-					case TestNetworkObject.IDENTITY:
-						availableCallback = true;
-						obj = new TestNetworkObject(networker, id, frame);
-						break;
 					case ShootBalloonNetworkObject.IDENTITY:
 						availableCallback = true;
 						obj = new ShootBalloonNetworkObject(networker, id, frame);
+						break;
+					case TestNetworkObject.IDENTITY:
+						availableCallback = true;
+						obj = new TestNetworkObject(networker, id, frame);
 						break;
 				}
 
