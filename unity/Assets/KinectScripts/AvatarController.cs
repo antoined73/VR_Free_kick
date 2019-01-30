@@ -16,6 +16,9 @@ public class AvatarController : MonoBehaviour
 	
 	// Bool that determines whether the avatar is allowed to move in vertical direction.
 	public bool verticalMovement = false;
+
+    // Bool that determines whether the avater is allowed to move in horizontal plan direction.
+    public bool allowPlanMovement = false;
 	
 	// Rate at which avatar will move through the scene. The rate multiplies the movement speed (.001f, i.e dividing by 1000, unity's framerate).
 	protected int moveRate = 1;
@@ -98,7 +101,10 @@ public class AvatarController : MonoBehaviour
 		}
 		
 		// move the avatar to its Kinect position
-		MoveAvatar(UserID);
+        if (allowPlanMovement)
+        {
+            MoveAvatar(UserID);
+        }
 
 		for (var boneIndex = 0; boneIndex < bones.Length; boneIndex++)
 		{

@@ -5,7 +5,8 @@ public class DefenderMovement : DefenderBehavior
 {
 
     public Rigidbody rb;
-    public float jumpForce = 200f;
+    public float jumpForce = 100f;
+    private bool IsGrounded = true;
 
     // Update is called once per frame
     private void Update()
@@ -23,6 +24,17 @@ public class DefenderMovement : DefenderBehavior
     
     public void Jump()
     {
-        rb.AddForce(new Vector3(0, jumpForce * Time.deltaTime, 0), ForceMode.Impulse);
+        if (IsGrounded)
+            rb.AddForce(new Vector3(0, jumpForce * Time.deltaTime, 0), ForceMode.Impulse);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        IsGrounded = true;
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        IsGrounded = false;
     }
 }
