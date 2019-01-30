@@ -6,11 +6,11 @@ using UnityEngine.UI;
 
 public class DefenderManager : DefenderManagerBehavior
 {
-
+    public int kinectTiltAngle = 5;
     public Image kinectPreview;
+    public RectTransform TrackingMarker;
     public KinectWrapper.NuiSkeletonPositionIndex TrackedJoint = KinectWrapper.NuiSkeletonPositionIndex.HandRight;
     public GameObject CalibrationObject;
-    public RectTransform TrackingMarker;
     public float smoothFactor = 5f;
 
     private float distanceToCamera = 10f;
@@ -24,13 +24,13 @@ public class DefenderManager : DefenderManagerBehavior
     private void Awake()
     {
         KinectWrapper.NuiCameraElevationGetAngle(out angle);
-        Debug.Log("Start up");
         Debug.Log("Current angle = " + angle);
         KinectWrapper.NuiCameraElevationSetAngle(0);
     }
 
     void Start()
     {
+        KinectManager manager = KinectManager.Instance;
         if (CalibrationObject)
         {
             distanceToCamera = (CalibrationObject.transform.position - Camera.main.transform.position).magnitude;
@@ -41,11 +41,11 @@ public class DefenderManager : DefenderManagerBehavior
             defendersOffline = new GameObject[quantity];
             for (int x = 0; x < quantity; x++)
             {
-                float position = x - 2.5f;
-                // Instantiate a new Defender Network Object.
-                GameObject def = Object.Instantiate(defender, new Vector3(position, 1.5f, 0), Quaternion.identity);
+                float position = x;
+                GameObject def = Object.Instantiate(defender, new Vector3(position, 0, 0), Quaternion.identity);
                 defendersOffline[x] = def;
             }
+            manager.ResetAvatarControllers();
         }
     }
 
@@ -111,7 +111,7 @@ public class DefenderManager : DefenderManagerBehavior
             if (angle < 4 && !manager.IsUserDetected())
             {
                 Debug.Log("Current angle = " + angle);
-                KinectWrapper.NuiCameraElevationSetAngle(5);
+                KinectWrapper.NuiCameraElevationSetAngle(kinectTiltAngle);
             }
 
 
@@ -135,7 +135,7 @@ public class DefenderManager : DefenderManagerBehavior
                 if (manager.IsJointTracked(userId, iJointIndex))
                 {
                     Vector3 posJoint = manager.GetRawSkeletonJointPos(userId, iJointIndex);
-                    Debug.Log("Joint position = " + posJoint);
+                    // Debug.Log("Joint position = " + posJoint);
 
                     shoulderReference = posJoint;
 
@@ -156,7 +156,7 @@ public class DefenderManager : DefenderManagerBehavior
 
                         if (TrackingMarker)
                         {
-                            TrackingMarker.anchoredPosition = new Vector2(posColor.x - 640, -posColor.y);
+                            TrackingMarker.anchoredPosition = new Vector2(posColor.x - kinectPreview.rectTransform.rect.width, -posColor.y);
                             // Debug.Log(TrackingMarker.anchoredPosition);
                         }
 
@@ -164,6 +164,18 @@ public class DefenderManager : DefenderManagerBehavior
                         {
                             Vector3 vPosOverlay = Camera.main.ViewportToWorldPoint(new Vector3(scaleX, scaleY, distanceToCamera));
                             CalibrationObject.transform.position = Vector3.Lerp(CalibrationObject.transform.position, vPosOverlay, smoothFactor * Time.deltaTime);
+                        }
+
+                        if (defendersOffline.Length > 0)
+                        {
+                            Vector3 newPosition = defendersOffline[0].transform.position;
+                            newPosition.x = posJoint.x;
+                            Debug.Log("X position = " + posJoint.x);
+                            foreach (GameObject d in defendersOffline)
+                            {
+                                newPosition.x += 1f;
+                                d.transform.position = Vector3.Lerp(d.transform.position, newPosition, smoothFactor * Time.deltaTime);
+                            }
                         }
                     }
                 }

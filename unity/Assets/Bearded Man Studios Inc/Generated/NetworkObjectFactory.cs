@@ -47,6 +47,10 @@ namespace BeardedManStudios.Forge.Networking.Generated
 						availableCallback = true;
 						obj = new MoveCubeNetworkObject(networker, id, frame);
 						break;
+					case MoveGoalNetworkObject.IDENTITY:
+						availableCallback = true;
+						obj = new MoveGoalNetworkObject(networker, id, frame);
+						break;
 					case NetworkCameraNetworkObject.IDENTITY:
 						availableCallback = true;
 						obj = new NetworkCameraNetworkObject(networker, id, frame);

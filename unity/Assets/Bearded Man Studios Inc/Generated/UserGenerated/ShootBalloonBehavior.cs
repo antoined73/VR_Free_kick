@@ -8,7 +8,7 @@ namespace BeardedManStudios.Forge.Networking.Generated
 	[GeneratedRPCVariableNames("{\"types\":[[]]")]
 	public abstract partial class ShootBalloonBehavior : NetworkBehavior
 	{
-		public const byte RPC_SHOOT = 0 + 5;
+		public const byte RPC_SHOOT__R_P_C = 0 + 5;
 		
 		public ShootBalloonNetworkObject networkObject = null;
 
@@ -22,7 +22,7 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			networkObject.AttachedBehavior = this;
 
 			base.SetupHelperRpcs(networkObject);
-			networkObject.RegisterRpc("Shoot", Shoot_RPC);
+			networkObject.RegisterRpc("Shoot_RPC", Shoot_RPC);
 
 			networkObject.onDestroy += DestroyGameObject;
 

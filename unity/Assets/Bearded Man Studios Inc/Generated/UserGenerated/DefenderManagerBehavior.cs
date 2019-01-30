@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace BeardedManStudios.Forge.Networking.Generated
 {
-	[GeneratedRPC("{\"types\":[[\"int\"][]]")]
-	[GeneratedRPCVariableNames("{\"types\":[[\"quantity\"][]]")]
+	[GeneratedRPC("{\"types\":[[][]]")]
+	[GeneratedRPCVariableNames("{\"types\":[[][]]")]
 	public abstract partial class DefenderManagerBehavior : NetworkBehavior
 	{
 		public const byte RPC_GENERATE_DEFENDERS = 0 + 5;
@@ -23,7 +23,7 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			networkObject.AttachedBehavior = this;
 
 			base.SetupHelperRpcs(networkObject);
-			networkObject.RegisterRpc("GenerateDefenders", GenerateDefenders, typeof(int));
+			networkObject.RegisterRpc("GenerateDefenders", GenerateDefenders);
 			networkObject.RegisterRpc("Jump", Jump);
 
 			networkObject.onDestroy += DestroyGameObject;
@@ -103,7 +103,6 @@ namespace BeardedManStudios.Forge.Networking.Generated
 
 		/// <summary>
 		/// Arguments:
-		/// int quantity
 		/// </summary>
 		public abstract void GenerateDefenders(RpcArgs args);
 		/// <summary>

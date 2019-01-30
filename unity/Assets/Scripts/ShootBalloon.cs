@@ -53,7 +53,7 @@ public class ShootBalloon : ShootBalloonBehavior
         {
             if (networkObject != null) // connected
             {
-                networkObject.SendRpc(RPC_SHOOT, Receivers.All);
+                networkObject.SendRpc(RPC_SHOOT__R_P_C, Receivers.All);
             }
             else // not connected
             {
