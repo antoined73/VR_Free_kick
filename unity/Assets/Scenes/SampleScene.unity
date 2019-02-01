@@ -440,6 +440,168 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &183115973
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 183115974}
+  - component: {fileID: 183115979}
+  - component: {fileID: 183115978}
+  - component: {fileID: 183115977}
+  - component: {fileID: 183115976}
+  - component: {fileID: 183115975}
+  m_Layer: 0
+  m_Name: DefenderCamera (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &183115974
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183115973}
+  m_LocalRotation: {x: 0.15252614, y: 0.07332051, z: -0.011347701, w: 0.9855106}
+  m_LocalPosition: {x: -0.42000008, y: 3.06, z: -3.4000015}
+  m_LocalScale: {x: 1, y: 0.9999999, z: 0.9999998}
+  m_Children: []
+  m_Father: {fileID: 1453582406}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 17.596, y: 8.51, z: 0}
+--- !u!114 &183115975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183115973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd925816555dea7448d6c76479f97e45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GestureInfo: {fileID: 1392615742}
+--- !u!114 &183115976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183115973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00db858c1f8ff90478dad0aa1bac9a2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TwoUsers: 0
+  ComputeUserMap: 1
+  ComputeColorMap: 1
+  DisplayUserMap: 0
+  DisplayColorMap: 0
+  DisplaySkeletonLines: 0
+  DisplayMapsWidthPercent: 20
+  SensorHeight: 1
+  SensorAngle: 0
+  MinUserDistance: 1
+  MaxUserDistance: 0
+  DetectClosestUser: 1
+  IgnoreInferredJoints: 1
+  smoothing: 1
+  UseBoneOrientationsFilter: 0
+  UseClippedLegsFilter: 0
+  UseBoneOrientationsConstraint: 1
+  UseSelfIntersectionConstraint: 0
+  Player1Avatars: []
+  Player2Avatars: []
+  Player1CalibrationPose: 0
+  Player2CalibrationPose: 0
+  Player1Gestures: 
+  Player2Gestures: 
+  MinTimeBetweenGestures: 0.7
+  GestureListeners:
+  - {fileID: 183115975}
+  CalibrationText: {fileID: 1392615741}
+  HandCursor1: {fileID: 0}
+  HandCursor2: {fileID: 0}
+  ControlMouseCursor: 0
+  GesturesDebugText: {fileID: 0}
+--- !u!114 &183115977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183115973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1dd28f72a11461449d415c40026aa22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kinectTiltAngle: 5
+  kinectPreview: {fileID: 1392615740}
+  TrackingMarker: {fileID: 1392615739}
+  TrackedJoint: 0
+  CalibrationObject: {fileID: 0}
+  smoothFactor: 5
+  defender: {fileID: 3960401724054593457, guid: 5818f6ebad35c674c836b48b7ebdb926,
+    type: 3}
+--- !u!81 &183115978
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183115973}
+  m_Enabled: 1
+--- !u!20 &183115979
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183115973}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_GateFitMode: 2
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 2
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 8400000, guid: 271114bd4ed4f9a4584718ca362d63d6, type: 2}
+  m_TargetDisplay: 0
+  m_TargetEye: 0
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
 --- !u!1001 &185093333
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1464,7 +1626,7 @@ PrefabInstance:
         type: 3}
       propertyPath: renderModelPrefab
       value: 
-      objectReference: {fileID: 1000010184414672, guid: 5dc81ef5cae96304586abbc6e4b5beb8,
+      objectReference: {fileID: 1000011547835092, guid: d5082f7d9f947374197e0a97786f4e40,
         type: 3}
     - target: {fileID: 4802849439497800376, guid: 1d205996d8988c346b027b81bed240ff,
         type: 3}
@@ -1750,6 +1912,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Depth
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8881319435950563297, guid: 608a2497f9c287e4880f60d982fe77b8,
+        type: 3}
+      propertyPath: m_TargetTexture
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8483571432113538164, guid: 608a2497f9c287e4880f60d982fe77b8, type: 3}
@@ -2101,6 +2268,12 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 6262085822218526559, guid: 5810f11019b047e4ebc34483117f83c3,
     type: 3}
   m_PrefabInstance: {fileID: 681259849}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1453582406 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5930367301264995799, guid: 608a2497f9c287e4880f60d982fe77b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1392615736}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1629539211
 GameObject:

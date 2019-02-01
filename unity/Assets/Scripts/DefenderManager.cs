@@ -42,7 +42,7 @@ public class DefenderManager : DefenderManagerBehavior
             for (int x = 0; x < quantity; x++)
             {
                 float position = x;
-                GameObject def = Object.Instantiate(defender, new Vector3(position, 0, 39), Quaternion.identity);
+                GameObject def = Object.Instantiate(defender, new Vector3(position, 0, 37), Quaternion.identity);
                 defendersOffline[x] = def;
             }
         } else
@@ -79,7 +79,7 @@ public class DefenderManager : DefenderManagerBehavior
             // Instantiate a new Defender Network Object.
             DefenderBehavior def = NetworkManager.Instance.InstantiateDefender(
                 0,
-                new Vector3(position, 0, 33),
+                new Vector3(position, 0, 37),
                 Quaternion.identity
             );
             defenders[x] = def;
