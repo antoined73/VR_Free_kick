@@ -45,8 +45,11 @@ public class DefenderManager : DefenderManagerBehavior
                 GameObject def = Object.Instantiate(defender, new Vector3(position, 0, 39), Quaternion.identity);
                 defendersOffline[x] = def;
             }
-            manager.ResetAvatarControllers();
+        } else
+        {
+            GenerateDefenders();
         }
+        manager.ResetAvatarControllers();
     }
 
     public void JumpOffline()
@@ -57,14 +60,8 @@ public class DefenderManager : DefenderManagerBehavior
         }
     }
 
-    // Call the RPC Jump method on the Server.
-    public void JumpCall()
-    {
-        networkObject.SendRpc(RPC_JUMP, Receivers.Server);
-    }
-
     // Make the defenders jump on the server side.
-    public override void Jump(RpcArgs args)
+    public void Jump()
     {
         foreach (DefenderBehavior d in defenders)
         {
@@ -78,9 +75,13 @@ public class DefenderManager : DefenderManagerBehavior
         defenders = new DefenderBehavior[4];
         for (int x = 0; x < 4; x++)
         {
-            float position = x - 2.5f;
+            float position = x;
             // Instantiate a new Defender Network Object.
-            DefenderBehavior def = NetworkManager.Instance.InstantiateDefender(0, new Vector3(transform.position.x + position, 1.5f, 39), Quaternion.identity);
+            DefenderBehavior def = NetworkManager.Instance.InstantiateDefender(
+                0,
+                new Vector3(position, 0, 38),
+                Quaternion.identity
+            );
             defenders[x] = def;
         }
     }
@@ -160,7 +161,7 @@ public class DefenderManager : DefenderManagerBehavior
                             CalibrationObject.transform.position = Vector3.Lerp(CalibrationObject.transform.position, vPosOverlay, smoothFactor * Time.deltaTime);
                         }
 
-                        if (defendersOffline.Length > 0)
+                        if (networkObject == null)
                         {
                             Vector3 newPosition = defendersOffline[0].transform.position;
                             newPosition.x = posJoint.x;
@@ -169,6 +170,19 @@ public class DefenderManager : DefenderManagerBehavior
                             {
                                 newPosition.x += 1f;
                                 d.transform.position = Vector3.Lerp(d.transform.position, newPosition, smoothFactor * Time.deltaTime);
+                            }
+                        }
+
+                        if (networkObject != null)
+                        {
+                            Vector3 newPosition = defenders[0].gameObject.transform.position;
+                            newPosition.x = posJoint.x;
+                            newPosition.z = 38;
+                            Debug.Log("X position = " + posJoint.x);
+                            foreach (DefenderBehavior d in defenders)
+                            {
+                                newPosition.x += 1f;
+                                d.gameObject.transform.position = Vector3.Lerp(d.gameObject.transform.position, newPosition, smoothFactor * Time.deltaTime);
                             }
                         }
                     }

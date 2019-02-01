@@ -1621,7 +1621,7 @@ public class KinectManager : MonoBehaviour
 			
 			foreach(AvatarController controller in Player1Controllers)
 			{
-				controller.ResetToInitialPosition();
+				// controller.ResetToInitialPosition();
 			}
 			
 			foreach(KinectGestures.GestureListenerInterface listener in gestureListeners)

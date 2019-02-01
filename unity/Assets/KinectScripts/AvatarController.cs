@@ -161,6 +161,7 @@ public class AvatarController : MonoBehaviour
 		}
 		
 		// Restore the offset's position and rotation
+
 		if(offsetNode != null)
 		{
 			offsetNode.transform.position = initialPosition;

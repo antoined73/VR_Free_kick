@@ -41,7 +41,7 @@ public class JumpGestureListener : MonoBehaviour, KinectGestures.GestureListener
         string sGestureText = gesture + " detected";
         if (gesture == KinectGestures.Gestures.Jump)
         {
-            DefenderManager.JumpOffline();
+            DefenderManager.Jump();
         }
         GestureInfo.text = sGestureText;
         return true;
