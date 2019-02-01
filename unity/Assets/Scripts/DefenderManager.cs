@@ -79,7 +79,7 @@ public class DefenderManager : DefenderManagerBehavior
             // Instantiate a new Defender Network Object.
             DefenderBehavior def = NetworkManager.Instance.InstantiateDefender(
                 0,
-                new Vector3(position, 0, 38),
+                new Vector3(position, 0, 33),
                 Quaternion.identity
             );
             defenders[x] = def;
