@@ -4,11 +4,12 @@ using UnityEngine;
 
 namespace BeardedManStudios.Forge.Networking.Generated
 {
-	[GeneratedRPC("{\"types\":[[]]")]
-	[GeneratedRPCVariableNames("{\"types\":[[]]")]
+	[GeneratedRPC("{\"types\":[[\"float\", \"float\", \"Vector2\"][]]")]
+	[GeneratedRPCVariableNames("{\"types\":[[\"shootDirection\", \"shootPower\", \"target\"][]]")]
 	public abstract partial class ShootBalloonBehavior : NetworkBehavior
 	{
-		public const byte RPC_SHOOT__R_P_C = 0 + 5;
+		public const byte RPC_SHOOT = 0 + 5;
+		public const byte RPC_RETRY = 1 + 5;
 		
 		public ShootBalloonNetworkObject networkObject = null;
 
@@ -22,7 +23,8 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			networkObject.AttachedBehavior = this;
 
 			base.SetupHelperRpcs(networkObject);
-			networkObject.RegisterRpc("Shoot_RPC", Shoot_RPC);
+			networkObject.RegisterRpc("Shoot", Shoot, typeof(float), typeof(float), typeof(Vector2));
+			networkObject.RegisterRpc("Retry", Retry);
 
 			networkObject.onDestroy += DestroyGameObject;
 
@@ -101,8 +103,15 @@ namespace BeardedManStudios.Forge.Networking.Generated
 
 		/// <summary>
 		/// Arguments:
+		/// float shootDirection
+		/// float shootPower
+		/// Vector2 target
 		/// </summary>
-		public abstract void Shoot_RPC(RpcArgs args);
+		public abstract void Shoot(RpcArgs args);
+		/// <summary>
+		/// Arguments:
+		/// </summary>
+		public abstract void Retry(RpcArgs args);
 
 		// DO NOT TOUCH, THIS GETS GENERATED PLEASE EXTEND THIS CLASS IF YOU WISH TO HAVE CUSTOM CODE ADDITIONS
 	}

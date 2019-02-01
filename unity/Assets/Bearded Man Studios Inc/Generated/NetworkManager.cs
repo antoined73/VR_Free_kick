@@ -15,7 +15,7 @@ namespace BeardedManStudios.Forge.Networking.Unity
 		public GameObject[] DefenderManagerNetworkObject = null;
 		public GameObject[] DefenderNetworkObject = null;
 		public GameObject[] ExampleProximityPlayerNetworkObject = null;
-		public GameObject[] MoveCubeNetworkObject = null;
+		public GameObject[] MoveBallNetworkObject = null;
 		public GameObject[] MoveGoalNetworkObject = null;
 		public GameObject[] NetworkCameraNetworkObject = null;
 		public GameObject[] ShootBalloonNetworkObject = null;
@@ -152,17 +152,17 @@ namespace BeardedManStudios.Forge.Networking.Unity
 						objectInitialized(newObj, obj);
 				});
 			}
-			else if (obj is MoveCubeNetworkObject)
+			else if (obj is MoveBallNetworkObject)
 			{
 				MainThreadManager.Run(() =>
 				{
 					NetworkBehavior newObj = null;
 					if (!NetworkBehavior.skipAttachIds.TryGetValue(obj.NetworkId, out newObj))
 					{
-						if (MoveCubeNetworkObject.Length > 0 && MoveCubeNetworkObject[obj.CreateCode] != null)
+						if (MoveBallNetworkObject.Length > 0 && MoveBallNetworkObject[obj.CreateCode] != null)
 						{
-							var go = Instantiate(MoveCubeNetworkObject[obj.CreateCode]);
-							newObj = go.GetComponent<MoveCubeBehavior>();
+							var go = Instantiate(MoveBallNetworkObject[obj.CreateCode]);
+							newObj = go.GetComponent<MoveBallBehavior>();
 						}
 					}
 
@@ -221,17 +221,17 @@ namespace BeardedManStudios.Forge.Networking.Unity
 						objectInitialized(newObj, obj);
 				});
 			}
-			else if (obj is TestNetworkObject)
+			else if (obj is ShootBalloonNetworkObject)
 			{
 				MainThreadManager.Run(() =>
 				{
 					NetworkBehavior newObj = null;
 					if (!NetworkBehavior.skipAttachIds.TryGetValue(obj.NetworkId, out newObj))
 					{
-						if (TestNetworkObject.Length > 0 && TestNetworkObject[obj.CreateCode] != null)
+						if (ShootBalloonNetworkObject.Length > 0 && ShootBalloonNetworkObject[obj.CreateCode] != null)
 						{
-							var go = Instantiate(TestNetworkObject[obj.CreateCode]);
-							newObj = go.GetComponent<TestBehavior>();
+							var go = Instantiate(ShootBalloonNetworkObject[obj.CreateCode]);
+							newObj = go.GetComponent<ShootBalloonBehavior>();
 						}
 					}
 
@@ -337,13 +337,13 @@ namespace BeardedManStudios.Forge.Networking.Unity
 			
 			return netBehavior;
 		}
-		[Obsolete("Use InstantiateMoveCube instead, its shorter and easier to type out ;)")]
-		public MoveCubeBehavior InstantiateMoveCubeNetworkObject(int index = 0, Vector3? position = null, Quaternion? rotation = null, bool sendTransform = true)
+		[Obsolete("Use InstantiateMoveBall instead, its shorter and easier to type out ;)")]
+		public MoveBallBehavior InstantiateMoveBallNetworkObject(int index = 0, Vector3? position = null, Quaternion? rotation = null, bool sendTransform = true)
 		{
-			var go = Instantiate(MoveCubeNetworkObject[index]);
-			var netBehavior = go.GetComponent<MoveCubeBehavior>();
+			var go = Instantiate(MoveBallNetworkObject[index]);
+			var netBehavior = go.GetComponent<MoveBallBehavior>();
 			var obj = netBehavior.CreateNetworkObject(Networker, index);
-			go.GetComponent<MoveCubeBehavior>().networkObject = (MoveCubeNetworkObject)obj;
+			go.GetComponent<MoveBallBehavior>().networkObject = (MoveBallNetworkObject)obj;
 
 			FinalizeInitialization(go, netBehavior, obj, position, rotation, sendTransform);
 			
@@ -368,6 +368,18 @@ namespace BeardedManStudios.Forge.Networking.Unity
 			var netBehavior = go.GetComponent<NetworkCameraBehavior>();
 			var obj = netBehavior.CreateNetworkObject(Networker, index);
 			go.GetComponent<NetworkCameraBehavior>().networkObject = (NetworkCameraNetworkObject)obj;
+
+			FinalizeInitialization(go, netBehavior, obj, position, rotation, sendTransform);
+			
+			return netBehavior;
+		}
+		[Obsolete("Use InstantiateShootBalloon instead, its shorter and easier to type out ;)")]
+		public ShootBalloonBehavior InstantiateShootBalloonNetworkObject(int index = 0, Vector3? position = null, Quaternion? rotation = null, bool sendTransform = true)
+		{
+			var go = Instantiate(ShootBalloonNetworkObject[index]);
+			var netBehavior = go.GetComponent<ShootBalloonBehavior>();
+			var obj = netBehavior.CreateNetworkObject(Networker, index);
+			go.GetComponent<ShootBalloonBehavior>().networkObject = (ShootBalloonNetworkObject)obj;
 
 			FinalizeInitialization(go, netBehavior, obj, position, rotation, sendTransform);
 			
@@ -642,19 +654,19 @@ namespace BeardedManStudios.Forge.Networking.Unity
 			return netBehavior;
 		}
 		/// <summary>
-		/// Instantiate an instance of MoveCube
+		/// Instantiate an instance of MoveBall
 		/// </summary>
 		/// <returns>
-		/// A local instance of MoveCubeBehavior
+		/// A local instance of MoveBallBehavior
 		/// </returns>
-		/// <param name="index">The index of the MoveCube prefab in the NetworkManager to Instantiate</param>
+		/// <param name="index">The index of the MoveBall prefab in the NetworkManager to Instantiate</param>
 		/// <param name="position">Optional parameter which defines the position of the created GameObject</param>
 		/// <param name="rotation">Optional parameter which defines the rotation of the created GameObject</param>
 		/// <param name="sendTransform">Optional Parameter to send transform data to other connected clients on Instantiation</param>
-		public MoveCubeBehavior InstantiateMoveCube(int index = 0, Vector3? position = null, Quaternion? rotation = null, bool sendTransform = true)
+		public MoveBallBehavior InstantiateMoveBall(int index = 0, Vector3? position = null, Quaternion? rotation = null, bool sendTransform = true)
 		{
-			var go = Instantiate(MoveCubeNetworkObject[index]);
-			var netBehavior = go.GetComponent<MoveCubeBehavior>();
+			var go = Instantiate(MoveBallNetworkObject[index]);
+			var netBehavior = go.GetComponent<MoveBallBehavior>();
 
 			NetworkObject obj = null;
 			if (!sendTransform && position == null && rotation == null)
@@ -686,7 +698,7 @@ namespace BeardedManStudios.Forge.Networking.Unity
 				obj = netBehavior.CreateNetworkObject(Networker, index, metadata.CompressBytes());
 			}
 
-			go.GetComponent<MoveCubeBehavior>().networkObject = (MoveCubeNetworkObject)obj;
+			go.GetComponent<MoveBallBehavior>().networkObject = (MoveBallNetworkObject)obj;
 
 			FinalizeInitialization(go, netBehavior, obj, position, rotation, sendTransform);
 			
@@ -789,6 +801,57 @@ namespace BeardedManStudios.Forge.Networking.Unity
 			}
 
 			go.GetComponent<NetworkCameraBehavior>().networkObject = (NetworkCameraNetworkObject)obj;
+
+			FinalizeInitialization(go, netBehavior, obj, position, rotation, sendTransform);
+			
+			return netBehavior;
+		}
+		/// <summary>
+		/// Instantiate an instance of ShootBalloon
+		/// </summary>
+		/// <returns>
+		/// A local instance of ShootBalloonBehavior
+		/// </returns>
+		/// <param name="index">The index of the ShootBalloon prefab in the NetworkManager to Instantiate</param>
+		/// <param name="position">Optional parameter which defines the position of the created GameObject</param>
+		/// <param name="rotation">Optional parameter which defines the rotation of the created GameObject</param>
+		/// <param name="sendTransform">Optional Parameter to send transform data to other connected clients on Instantiation</param>
+		public ShootBalloonBehavior InstantiateShootBalloon(int index = 0, Vector3? position = null, Quaternion? rotation = null, bool sendTransform = true)
+		{
+			var go = Instantiate(ShootBalloonNetworkObject[index]);
+			var netBehavior = go.GetComponent<ShootBalloonBehavior>();
+
+			NetworkObject obj = null;
+			if (!sendTransform && position == null && rotation == null)
+				obj = netBehavior.CreateNetworkObject(Networker, index);
+			else
+			{
+				metadata.Clear();
+
+				if (position == null && rotation == null)
+				{
+					byte transformFlags = 0x1 | 0x2;
+					ObjectMapper.Instance.MapBytes(metadata, transformFlags);
+					ObjectMapper.Instance.MapBytes(metadata, go.transform.position, go.transform.rotation);
+				}
+				else
+				{
+					byte transformFlags = 0x0;
+					transformFlags |= (byte)(position != null ? 0x1 : 0x0);
+					transformFlags |= (byte)(rotation != null ? 0x2 : 0x0);
+					ObjectMapper.Instance.MapBytes(metadata, transformFlags);
+
+					if (position != null)
+						ObjectMapper.Instance.MapBytes(metadata, position.Value);
+
+					if (rotation != null)
+						ObjectMapper.Instance.MapBytes(metadata, rotation.Value);
+				}
+
+				obj = netBehavior.CreateNetworkObject(Networker, index, metadata.CompressBytes());
+			}
+
+			go.GetComponent<ShootBalloonBehavior>().networkObject = (ShootBalloonNetworkObject)obj;
 
 			FinalizeInitialization(go, netBehavior, obj, position, rotation, sendTransform);
 			

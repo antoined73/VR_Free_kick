@@ -29,7 +29,7 @@ public class ShootBalloon : ShootBalloonBehavior
     {
         foreach (Touch touch in Input.touches)
         {
-            if (touch.phase == TouchPhase.Began && !targetSettled)
+            if (touch.phase == TouchPhase.Began && !targetSettled && gameController.getRoleChoosen() == Role.Shooter)
             {
                 this.target = touch.position;
                 cameras[1].enabled = false;
@@ -53,7 +53,7 @@ public class ShootBalloon : ShootBalloonBehavior
         {
             if (networkObject != null) // connected
             {
-                networkObject.SendRpc(RPC_SHOOT__R_P_C, Receivers.All);
+                networkObject.SendRpc(RPC_SHOOT, Receivers.All, this.shootDirection, this.shootPower, this.target);
             }
             else // not connected
             {
@@ -62,19 +62,24 @@ public class ShootBalloon : ShootBalloonBehavior
         }
     }
 
-    public override void Shoot_RPC(RpcArgs args)
+    public void TryResetBall()
     {
-        Shoot();
+        if (gameController.getRoleChoosen() == Role.Shooter)
+        {
+            if (networkObject != null) // connected
+            {
+                networkObject.SendRpc(RPC_RETRY, Receivers.All);
+            }
+            else // not connected
+            {
+                ResetBall();
+            }
+        }
     }
 
     public void Shoot()
     {
         rb.AddForce(this.shootDirection, this.shootPower/2, this.shootPower, ForceMode.Impulse);
-    }
-
-    public void OnClick()
-    {
-        TryShoot();
     }
 
     public void directionValueUpdate(float newValue)
@@ -92,5 +97,19 @@ public class ShootBalloon : ShootBalloonBehavior
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
         transform.position = startPointTransform.position;
+    }
+
+    //RPC METHODS
+    public override void Shoot(RpcArgs args)
+    {
+        this.shootDirection = args.GetNext<float>();
+        this.shootPower = args.GetNext<float>();
+        this.target = args.GetNext<Vector2>();
+        Shoot();
+    }
+
+    public override void Retry(RpcArgs args)
+    {
+        ResetBall();
     }
 }

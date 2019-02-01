@@ -36,9 +36,11 @@ public class GameManager : MonoBehaviour
         this.roleChoosen = role;
         switch (role)
         {
-            case Role.Goal : cameras[0].enabled = true; return;
-            case Role.Shooter : cameras[3].enabled = true; return;
-            case Role.Defender : cameras[1].enabled = true; return;
+            case Role.Goal : 
+                cameras[0].enabled = true;
+                //Display.displays[1].Activate();
+                return;
+            case Role.Shooter : cameras[2].enabled = true; return;
             default : return;
         }
     }

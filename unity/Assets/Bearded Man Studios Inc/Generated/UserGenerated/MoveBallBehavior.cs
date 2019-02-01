@@ -6,10 +6,10 @@ namespace BeardedManStudios.Forge.Networking.Generated
 {
 	[GeneratedRPC("{\"types\":[]")]
 	[GeneratedRPCVariableNames("{\"types\":[]")]
-	public abstract partial class MoveCubeBehavior : NetworkBehavior
+	public abstract partial class MoveBallBehavior : NetworkBehavior
 	{
 		
-		public MoveCubeNetworkObject networkObject = null;
+		public MoveBallNetworkObject networkObject = null;
 
 		public override void Initialize(NetworkObject obj)
 		{
@@ -17,7 +17,7 @@ namespace BeardedManStudios.Forge.Networking.Generated
 			if (networkObject != null && networkObject.AttachedBehavior != null)
 				return;
 			
-			networkObject = (MoveCubeNetworkObject)obj;
+			networkObject = (MoveBallNetworkObject)obj;
 			networkObject.AttachedBehavior = this;
 
 			base.SetupHelperRpcs(networkObject);
@@ -78,7 +78,7 @@ namespace BeardedManStudios.Forge.Networking.Generated
 
 		public override void Initialize(NetWorker networker, byte[] metadata = null)
 		{
-			Initialize(new MoveCubeNetworkObject(networker, createCode: TempAttachCode, metadata: metadata));
+			Initialize(new MoveBallNetworkObject(networker, createCode: TempAttachCode, metadata: metadata));
 		}
 
 		private void DestroyGameObject(NetWorker sender)
@@ -89,7 +89,7 @@ namespace BeardedManStudios.Forge.Networking.Generated
 
 		public override NetworkObject CreateNetworkObject(NetWorker networker, int createCode, byte[] metadata = null)
 		{
-			return new MoveCubeNetworkObject(networker, this, createCode, metadata);
+			return new MoveBallNetworkObject(networker, this, createCode, metadata);
 		}
 
 		protected override void InitializedTransform()

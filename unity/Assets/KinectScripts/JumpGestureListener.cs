@@ -6,6 +6,13 @@ public class JumpGestureListener : MonoBehaviour, KinectGestures.GestureListener
     // GUI Text to display the gesture messages.
     public Text GestureInfo;
 
+    private DefenderManager DefenderManager;
+
+    public void Awake()
+    {
+        DefenderManager = GameObject.FindObjectOfType<DefenderManager>();
+    }
+
     public void UserDetected(uint userId, int userIndex)
     {
         // as an example - detect these user specific gestures
@@ -34,7 +41,7 @@ public class JumpGestureListener : MonoBehaviour, KinectGestures.GestureListener
         string sGestureText = gesture + " detected";
         if (gesture == KinectGestures.Gestures.Jump)
         {
-            Camera.main.GetComponent<DefenderManager>().JumpOffline();
+            DefenderManager.JumpOffline();
         }
         GestureInfo.text = sGestureText;
         return true;

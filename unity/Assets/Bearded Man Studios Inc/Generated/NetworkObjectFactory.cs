@@ -43,9 +43,9 @@ namespace BeardedManStudios.Forge.Networking.Generated
 						availableCallback = true;
 						obj = new ExampleProximityPlayerNetworkObject(networker, id, frame);
 						break;
-					case MoveCubeNetworkObject.IDENTITY:
+					case MoveBallNetworkObject.IDENTITY:
 						availableCallback = true;
-						obj = new MoveCubeNetworkObject(networker, id, frame);
+						obj = new MoveBallNetworkObject(networker, id, frame);
 						break;
 					case MoveGoalNetworkObject.IDENTITY:
 						availableCallback = true;

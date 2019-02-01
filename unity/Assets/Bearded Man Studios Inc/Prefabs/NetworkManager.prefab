@@ -47,13 +47,14 @@ MonoBehaviour:
   - {fileID: 1000012032569418, guid: b454b1be0b2c3fa4fb48430867af7566, type: 3}
   CubeForgeGameNetworkObject: []
   DefenderManagerNetworkObject: []
+  DefenderNetworkObject:
+  - {fileID: 3960401724054593457, guid: 5818f6ebad35c674c836b48b7ebdb926, type: 3}
   ExampleProximityPlayerNetworkObject:
   - {fileID: 1000012738253334, guid: feb25ecf90a8d8b4ab922a455249997b, type: 3}
-  MoveCubeNetworkObject: []
+  MoveBallNetworkObject: []
+  MoveGoalNetworkObject: []
   NetworkCameraNetworkObject:
   - {fileID: 139536, guid: 661f29f0c0c86fa47b6015bd602d0ac6, type: 3}
   ShootBalloonNetworkObject: []
   TestNetworkObject: []
-  DefenderNetworkObject:
-  - {fileID: 8297094569192679301, guid: 2cb4ebab2a4184247b4f457e004a2762, type: 3}
   automaticScenes: 1
