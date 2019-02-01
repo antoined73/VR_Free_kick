@@ -1881,12 +1881,52 @@ PrefabInstance:
     - target: {fileID: 7085276304563513212, guid: 608a2497f9c287e4880f60d982fe77b8,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.15252614
+      value: 0.22946672
       objectReference: {fileID: 0}
     - target: {fileID: 7085276304563513212, guid: 608a2497f9c287e4880f60d982fe77b8,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.011347701
+      value: -0.05117168
+      objectReference: {fileID: 0}
+    - target: {fileID: 7085276304563513212, guid: 608a2497f9c287e4880f60d982fe77b8,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 7085276304563513212, guid: 608a2497f9c287e4880f60d982fe77b8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7085276304563513212, guid: 608a2497f9c287e4880f60d982fe77b8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 7085276304563513212, guid: 608a2497f9c287e4880f60d982fe77b8,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.26279685
+      objectReference: {fileID: 0}
+    - target: {fileID: 7085276304563513212, guid: 608a2497f9c287e4880f60d982fe77b8,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9357694
+      objectReference: {fileID: 0}
+    - target: {fileID: 7085276304563513212, guid: 608a2497f9c287e4880f60d982fe77b8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 31.760002
+      objectReference: {fileID: 0}
+    - target: {fileID: 7085276304563513212, guid: 608a2497f9c287e4880f60d982fe77b8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 27.152
+      objectReference: {fileID: 0}
+    - target: {fileID: 7085276304563513212, guid: 608a2497f9c287e4880f60d982fe77b8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 1.5990001
       objectReference: {fileID: 0}
     - target: {fileID: 487219521036610443, guid: 608a2497f9c287e4880f60d982fe77b8,
         type: 3}
@@ -1917,6 +1957,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TargetTexture
       value: 
+      objectReference: {fileID: 8400000, guid: 271114bd4ed4f9a4584718ca362d63d6, type: 2}
+    - target: {fileID: 8881319435950563297, guid: 608a2497f9c287e4880f60d982fe77b8,
+        type: 3}
+      propertyPath: field of view
+      value: 56
+      objectReference: {fileID: 0}
+    - target: {fileID: 8483571432249578959, guid: 608a2497f9c287e4880f60d982fe77b8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8483571432113538164, guid: 608a2497f9c287e4880f60d982fe77b8, type: 3}
