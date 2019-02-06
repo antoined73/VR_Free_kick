@@ -12,21 +12,30 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        //launchRecording();        
+        objectsTransform = (Replay[])FindObjectsOfType(typeof(Replay));
     }
 
     private void launchRecording()
     {
-        objectsTransform = (Replay[])FindObjectsOfType(typeof(Replay));
-        if (objectsTransform.Length > 0)
+        foreach(Replay element in objectsTransform)
         {
-            objectsTransform[0].startRecording();
-            Debug.Log("start");
-            Task.Delay(5000).ContinueWith((task) => {
-                Debug.Log("stop");
-                objectsTransform[0].stopRecording();
-                objectsTransform[0].startPlayingBack();
-            });
+            element.startRecording();
+        }
+    }
+
+    private void stopRecording()
+    {
+        foreach (Replay element in objectsTransform)
+        {
+            element.stopRecording();
+        }
+    }
+
+    private void startPlayingBack()
+    {
+        foreach (Replay element in objectsTransform)
+        {
+            element.startPlayingBack();
         }
     }
 
