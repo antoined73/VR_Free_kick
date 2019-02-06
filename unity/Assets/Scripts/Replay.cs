@@ -9,7 +9,9 @@ public class Replay : MonoBehaviour
     private bool isPlayingBack = false;
     private List<Vector3> transformPosition;
     private List<Quaternion> transformRotation;
-    private int currentLoop = 0;
+    private int currentLoop = 100;
+
+    private float playRate = 0.033f;
 
     // Start is called before the first frame update
     void Start()
@@ -22,12 +24,30 @@ public class Replay : MonoBehaviour
     {
         if (isRecording)
         {
+            Debug.Log("record");
             transformPosition.Add(transform.position);
             transformRotation.Add(transform.rotation);
-        } else if (isPlayingBack && currentLoop < transformPosition.Count - 1)
+        }
+    }
+
+    public void startPlayingBack()
+    {
+        currentLoop = 100;
+        isPlayingBack = true;
+        InvokeRepeating("PlayingBackRepeat", 0, this.playRate);
+    }
+
+    private void PlayingBackRepeat()
+    {
+        if(currentLoop < transformPosition.Count - 1 && isPlayingBack)
         {
-            transform.position = transformPosition[currentLoop++];
+            Debug.Log("playBack");
+            transform.position = transformPosition[currentLoop];
             transform.rotation = transformRotation[currentLoop++];
+        } else
+        {
+            this.stopPlayingBack();
+            CancelInvoke();
         }
     }
 
@@ -43,15 +63,8 @@ public class Replay : MonoBehaviour
         isRecording = false;
     }
 
-    public void startPlayingBack()
-    {
-        currentLoop = 0;
-        isPlayingBack = true;
-    }
-
     public void stopPlayingBack()
     {
         isPlayingBack = false;
-
     }
 }

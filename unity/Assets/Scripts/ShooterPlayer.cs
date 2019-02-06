@@ -69,6 +69,7 @@ public class ShooterPlayer : ShootBalloonBehavior
 
     private void LaunchShootOrder()
     {
+        this.gameController.launchRecording();
         shootOrdered = true;
         StartCoroutine(ShootOrder());
     }
@@ -79,8 +80,8 @@ public class ShooterPlayer : ShootBalloonBehavior
         yield return new WaitForSeconds(3);
         ballShot = true;
         shootBall.Shoot(this.shootTarget, this.shootDirection, this.shootPower);
-        yield return new WaitForSeconds(2);
-        attackUI.ShowRetryBtn();
+        yield return new WaitForSeconds(6);
+        this.gameController.stopRecording();
     }
 
     public bool TryLaunchShoot()
@@ -122,7 +123,7 @@ public class ShooterPlayer : ShootBalloonBehavior
     private void LauchRetryOrder()
     {
         ballDetector.Reset();
-
+        gameController.Reset();
         targetSettled = false;
         shootOrdered = false;
         ballShot = false;

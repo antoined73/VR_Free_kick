@@ -10,32 +10,85 @@ public class GameManager : MonoBehaviour
     private Role roleChoosen;
     private Replay[] objectsTransform;
 
-    private void Awake()
+    private AttackUIActions attackUI;
+    private bool isPlayingBack = false;
+
+    private Rigidbody ballRigidBody;
+    private List<Collider> handsCollider = new List<Collider>();
+    private GameObject[] hands;
+
+    internal void Reset()
     {
-        objectsTransform = (Replay[])FindObjectsOfType(typeof(Replay));
+        this.stopPlayingBack();
+        this.isPlayingBack = false;
+        ballRigidBody.isKinematic = false;
+        foreach (Collider hand in handsCollider)
+        {
+            hand.enabled = true;
+        }
     }
 
-    private void launchRecording()
+    private void Awake()
     {
+        ballRigidBody = GameObject.FindGameObjectWithTag("Ball").GetComponent<Rigidbody>();
+        objectsTransform = (Replay[])FindObjectsOfType(typeof(Replay));
+        attackUI = GameObject.FindObjectOfType<AttackUIActions>();
+        hands = GameObject.FindGameObjectsWithTag("goalHand");
+        foreach(GameObject hand in hands)
+        {
+            handsCollider.Add(hand.GetComponent<Collider>());
+        }
+    }
+
+    public void launchRecording()
+    {
+        ballRigidBody.isKinematic = false;
+        foreach (Collider hand in handsCollider)
+        {
+            hand.enabled = true;
+        }
+
         foreach(Replay element in objectsTransform)
         {
             element.startRecording();
         }
     }
 
-    private void stopRecording()
+    public void stopRecording()
     {
+        ballRigidBody.isKinematic = true;
+        foreach (Collider hand in handsCollider)
+        {
+            hand.enabled = false;
+        }
         foreach (Replay element in objectsTransform)
         {
             element.stopRecording();
         }
+        attackUI.ShowRetryBtn();
+        this.startPlayingBack();
     }
 
-    private void startPlayingBack()
+    public void startPlayingBack()
     {
+        if(!this.isPlayingBack)
+        {
+            this.isPlayingBack = true;
+
+            foreach (Replay element in objectsTransform)
+            {
+                element.startPlayingBack();
+            }
+        }
+    }
+
+    private void stopPlayingBack()
+    {
+        this.isPlayingBack = false;
+
         foreach (Replay element in objectsTransform)
         {
-            element.startPlayingBack();
+            element.stopPlayingBack();
         }
     }
 

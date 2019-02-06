@@ -10,20 +10,29 @@ public class BallDetector : MonoBehaviour
     private bool ballDetectedOnce = false;
 
     private AudioManager audioManager;
+    private GameManager gameManager;
 
     private void Awake()
     {
         audioManager = GameObject.FindObjectOfType<AudioManager>();
+        gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag.Equals(BALL_TAG) && !ballDetectedOnce)
         {
-            ballDetectedOnce = true;
-            SetContainsBall(true);
-            audioManager.PlayGoalSound();
+            StartCoroutine(EnteredField());
         }
+    }
+
+    IEnumerator EnteredField()
+    {
+        ballDetectedOnce = true;
+        SetContainsBall(true);
+        audioManager.PlayGoalSound();
+        yield return new WaitForSeconds(3);
+        this.gameManager.stopRecording();
     }
 
     private void OnTriggerExit(Collider other)
