@@ -9,6 +9,7 @@ public class DefenderManager : DefenderManagerBehavior
     public int kinectTiltAngle = 5;
     public Image kinectPreview;
     public RectTransform TrackingMarker;
+    public RectTransform TrackingMarker2;
     public KinectWrapper.NuiSkeletonPositionIndex TrackedJoint = KinectWrapper.NuiSkeletonPositionIndex.HandRight;
     public GameObject CalibrationObject;
     public float smoothFactor = 5f;
@@ -42,7 +43,7 @@ public class DefenderManager : DefenderManagerBehavior
             for (int x = 0; x < quantity; x++)
             {
                 float position = x;
-                GameObject def = Object.Instantiate(defender, new Vector3(position, 0, 37), Quaternion.identity);
+                GameObject def = Object.Instantiate(defender, new Vector3(position, 0, 0), Quaternion.identity);
                 defendersOffline[x] = def;
             }
         } else
@@ -52,20 +53,16 @@ public class DefenderManager : DefenderManagerBehavior
         manager.ResetAvatarControllers();
     }
 
-    public void JumpOffline()
-    {
-        foreach (GameObject d in defendersOffline)
-        {
-            d.GetComponent<DefenderMovement>().Jump();
-        }
-    }
-
     // Make the defenders jump on the server side.
     public void Jump()
     {
         foreach (DefenderBehavior d in defenders)
         {
             d.gameObject.GetComponent<DefenderMovement>().Jump();
+        }
+        foreach (GameObject d in defendersOffline)
+        {
+            d.GetComponent<DefenderMovement>().Jump();
         }
     }
 
@@ -122,10 +119,10 @@ public class DefenderManager : DefenderManagerBehavior
             //Vector3 vUp = TopLeft - BottomLeft;
 
             int iJointIndex = (int)TrackedJoint;
-
             if (manager.IsUserDetected())
             {
                 uint userId = manager.GetPlayer1ID();
+                uint user2Id = manager.GetPlayer2ID();
 
                 if (manager.IsJointTracked(userId, iJointIndex))
                 {
@@ -165,7 +162,7 @@ public class DefenderManager : DefenderManagerBehavior
                         {
                             Vector3 newPosition = defendersOffline[0].transform.position;
                             newPosition.x = posJoint.x;
-                            Debug.Log("X position = " + posJoint.x);
+                            // Debug.Log("X position = " + posJoint.x);
                             foreach (GameObject d in defendersOffline)
                             {
                                 newPosition.x += 1f;
@@ -178,7 +175,7 @@ public class DefenderManager : DefenderManagerBehavior
                             Vector3 newPosition = defenders[0].gameObject.transform.position;
                             newPosition.x = posJoint.x;
                             newPosition.z = 38;
-                            Debug.Log("X position = " + posJoint.x);
+                            // Debug.Log("X position = " + posJoint.x);
                             foreach (DefenderBehavior d in defenders)
                             {
                                 newPosition.x += 1f;
@@ -187,9 +184,25 @@ public class DefenderManager : DefenderManagerBehavior
                         }
                     }
                 }
+                if (manager.IsJointTracked(user2Id, iJointIndex))
+                {
+                    Vector3 posJoint = manager.GetRawSkeletonJointPos(user2Id, iJointIndex);
+                    if (posJoint != Vector3.zero)
+                    {
+                        // 3d position to depth
+                        Vector2 posDepth = manager.GetDepthMapPosForJointPos(posJoint);
 
+                        // depth pos to color pos
+                        Vector2 posColor = manager.GetColorMapPosForDepthPos(posDepth);
+
+                        if (TrackingMarker2)
+                        {
+                            TrackingMarker2.anchoredPosition = new Vector2(posColor.x - kinectPreview.rectTransform.rect.width, -posColor.y);
+                            // Debug.Log(TrackingMarker.anchoredPosition);
+                        }
+                    }
+                }
             }
-
         }
         // }
     }
