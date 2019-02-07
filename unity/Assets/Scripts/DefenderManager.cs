@@ -20,7 +20,7 @@ public class DefenderManager : DefenderManagerBehavior
     private int angle;
 
     public GameObject defender;
-    private DefenderBehavior[] defenders = new DefenderBehavior[0];
+    public DefenderBehavior[] defenders = new DefenderBehavior[0];
     public GameObject[] defendersOffline = new GameObject[0];
 
     private void Awake()

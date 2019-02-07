@@ -21,9 +21,16 @@ public class JumpGestureListener : MonoBehaviour, KinectGestures.GestureListener
         KinectManager manager = KinectManager.Instance;
         players.Add(userId);
         if (players.Count > 1)
-        {
-            manager.Player1Avatars = new List<GameObject>(new GameObject[] { DefenderManager.defendersOffline[0], DefenderManager.defendersOffline[1] });
-            manager.Player2Avatars = new List<GameObject>(new GameObject[] { DefenderManager.defendersOffline[2], DefenderManager.defendersOffline[3] });
+        { 
+            if (DefenderManager.defendersOffline.Length > 0)
+            {
+                manager.Player1Avatars = new List<GameObject>(new GameObject[] { DefenderManager.defendersOffline[0], DefenderManager.defendersOffline[1] });
+                manager.Player2Avatars = new List<GameObject>(new GameObject[] { DefenderManager.defendersOffline[2], DefenderManager.defendersOffline[3] });
+            } else if (DefenderManager.defenders.Length > 0)
+            {
+                manager.Player1Avatars = new List<GameObject>(new GameObject[] { DefenderManager.defenders[0].gameObject, DefenderManager.defenders[1].gameObject });
+                manager.Player2Avatars = new List<GameObject>(new GameObject[] { DefenderManager.defenders[2].gameObject, DefenderManager.defenders[3].gameObject });
+            }
             manager.ResetAvatarControllers();
         } else
         {
