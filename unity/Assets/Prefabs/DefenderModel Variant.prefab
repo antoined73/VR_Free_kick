@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 2514087429130518203}
-  jumpForce: 5000
+  jumpForce: 4000
   isGrounded: 1
 --- !u!136 &9023556694956377719
 CapsuleCollider:
@@ -307,6 +307,18 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 918175965081e9740a2de076d9542c1f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 918175965081e9740a2de076d9542c1f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 918175965081e9740a2de076d9542c1f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 918175965081e9740a2de076d9542c1f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 400132, guid: 918175965081e9740a2de076d9542c1f, type: 3}
       propertyPath: m_LocalScale.y

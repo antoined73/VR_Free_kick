@@ -12,6 +12,7 @@ TagManager:
   - ShooterModel
   - PointShootCamera
   - ShooterPlayer
+  - DefenderWall
   layers:
   - Default
   - TransparentFX

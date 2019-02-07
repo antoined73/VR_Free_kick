@@ -49,7 +49,7 @@ public class DefenderManager : DefenderManagerBehavior
                     transform.position.x + 0.5f - number / 2,
                     0,
                     transform.position.z - 4), 
-                        Quaternion.identity);
+                    Quaternion.Euler(0, 180, 0));
                 defendersOffline[x] = def;
             }
         } else
@@ -66,7 +66,6 @@ public class DefenderManager : DefenderManagerBehavior
         defenders = new DefenderBehavior[4];
         for (int x = 0; x < 4; x++)
         {
-            float position = x;
             // Instantiate a new Defender Network Object.
             DefenderBehavior def = NetworkManager.Instance.InstantiateDefender(
                 0, 
@@ -74,7 +73,7 @@ public class DefenderManager : DefenderManagerBehavior
                     transform.position.x + 0.5f - number / 2,
                     0,
                     transform.position.z - 4),
-                Quaternion.identity
+                Quaternion.Euler(0, 180, 0)
             );
             defenders[x] = def;
         }
@@ -223,14 +222,14 @@ public class DefenderManager : DefenderManagerBehavior
                             for (int i = 0; i < (Manager.IsJointTracked(user2Id, iJointIndex) ? 2 : 4); i++)
                             {
                                 GameObject d = defendersOffline[i];
-                                float newX = posJoint.x + i + 0.5f - number / 2;
+                                float newX = transform.position.x - posJoint.x + i + 0.5f - number / 2;
                                 d.transform.position = Vector3.Lerp(d.transform.position, new Vector3(newX, d.transform.position.y, d.transform.position.z), smoothFactor * Time.deltaTime);
                             }
                         } else {
                             for (int i = 0; i < (Manager.IsJointTracked(user2Id, iJointIndex) ? 2 : 4); i++)
                             {
                                 DefenderBehavior d = defenders[i];
-                                float newX = posJoint.x + i + 0.5f - number / 2;
+                                float newX = transform.position.x - posJoint.x + i + 0.5f - number / 2;
                                 d.gameObject.transform.position = Vector3.Lerp(
                                     d.gameObject.transform.position,
                                     new Vector3(newX,
@@ -264,7 +263,7 @@ public class DefenderManager : DefenderManagerBehavior
                             {
                                 GameObject d = defendersOffline[i];
                                 Vector3 newPosition = defendersOffline[i].transform.position;
-                                newPosition.x = posJoint.x;
+                                newPosition.x = transform.position.x - posJoint.x;
                                 newPosition.x += i - number / 2;
                                 d.transform.position = Vector3.Lerp(d.transform.position, newPosition, smoothFactor * Time.deltaTime);
                             }
@@ -272,7 +271,7 @@ public class DefenderManager : DefenderManagerBehavior
                             for (int i = 2; i < 4; i++)
                             {
                                 DefenderBehavior d = defenders[i];
-                                float newX = posJoint.x + i - number / 2;
+                                float newX = transform.position.x - posJoint.x + i - number / 2;
                                 d.gameObject.transform.position = Vector3.Lerp(
                                     d.gameObject.transform.position,
                                     new Vector3(newX,

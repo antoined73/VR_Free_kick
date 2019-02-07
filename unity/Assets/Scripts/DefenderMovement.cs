@@ -8,6 +8,11 @@ public class DefenderMovement : DefenderBehavior
     public float jumpForce = 100f;
     public bool isGrounded = true;
 
+    public void Awake()
+    {
+        this.transform.parent = GameObject.FindGameObjectWithTag("DefenderWall").transform;
+    }
+
     // Update is called once per frame
     private void Update()
     {
