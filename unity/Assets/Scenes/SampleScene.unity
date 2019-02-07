@@ -2867,6 +2867,34 @@ PrefabInstance:
       propertyPath: startPointTransform
       value: 
       objectReference: {fileID: 476486033}
+    - target: {fileID: 2044853578, guid: 18bb1e49fb941b84792f19992e0b28e0, type: 3}
+      propertyPath: cameras.Array.data[0]
+      value: 
+      objectReference: {fileID: 1426067485}
+    - target: {fileID: 2044853578, guid: 18bb1e49fb941b84792f19992e0b28e0, type: 3}
+      propertyPath: cameras.Array.data[1]
+      value: 
+      objectReference: {fileID: 855538135}
+    - target: {fileID: 2044853578, guid: 18bb1e49fb941b84792f19992e0b28e0, type: 3}
+      propertyPath: p
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044853578, guid: 18bb1e49fb941b84792f19992e0b28e0, type: 3}
+      propertyPath: t.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044853578, guid: 18bb1e49fb941b84792f19992e0b28e0, type: 3}
+      propertyPath: t.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044853578, guid: 18bb1e49fb941b84792f19992e0b28e0, type: 3}
+      propertyPath: effectPower
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2044853578, guid: 18bb1e49fb941b84792f19992e0b28e0, type: 3}
+      propertyPath: d
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3233559191473155838, guid: 18bb1e49fb941b84792f19992e0b28e0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2875,7 +2903,7 @@ PrefabInstance:
     - target: {fileID: 3233559191473155838, guid: 18bb1e49fb941b84792f19992e0b28e0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.11632547
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 3233559191473155838, guid: 18bb1e49fb941b84792f19992e0b28e0,
         type: 3}
@@ -2921,6 +2949,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3201502669185832326, guid: 18bb1e49fb941b84792f19992e0b28e0,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18bb1e49fb941b84792f19992e0b28e0, type: 3}
@@ -3603,9 +3636,24 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3343665921169253631, guid: 309505b0d5266a7438ff8036c0be06af,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3343665920805745751, guid: 309505b0d5266a7438ff8036c0be06af,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3343665920805745751, guid: 309505b0d5266a7438ff8036c0be06af,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3343665920805745751, guid: 309505b0d5266a7438ff8036c0be06af,
+        type: 3}
+      propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3343665922721697839, guid: 309505b0d5266a7438ff8036c0be06af,
@@ -3762,6 +3810,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RaycastTarget
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3343665920856233341, guid: 309505b0d5266a7438ff8036c0be06af,
+        type: 3}
+      propertyPath: m_MinValue
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3343665920856233341, guid: 309505b0d5266a7438ff8036c0be06af,
+        type: 3}
+      propertyPath: m_MaxValue
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3343665921464705543, guid: 309505b0d5266a7438ff8036c0be06af,
+        type: 3}
+      propertyPath: m_MaxValue
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3343665921464705543, guid: 309505b0d5266a7438ff8036c0be06af,
+        type: 3}
+      propertyPath: m_Value
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3343665921464705543, guid: 309505b0d5266a7438ff8036c0be06af,
+        type: 3}
+      propertyPath: m_MinValue
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 309505b0d5266a7438ff8036c0be06af, type: 3}

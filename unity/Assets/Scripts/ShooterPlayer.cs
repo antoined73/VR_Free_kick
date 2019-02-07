@@ -23,8 +23,8 @@ public class ShooterPlayer : ShootBalloonBehavior
     public bool ballShot;
 
     // Shoot parameters
-    private float shootDirection;
-    private float shootPower;
+    private float shootDirection = 0;
+    private float shootPower = 15;
     private Vector2 shootTarget;
     private bool shootOrdered;
 
