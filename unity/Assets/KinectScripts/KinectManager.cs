@@ -753,15 +753,15 @@ public class KinectManager : MonoBehaviour
 	// recreates and reinitializes the lists of avatar controllers, after the list of avatars for player 1/2 was changed
 	public void ResetAvatarControllers()
 	{
-		// if(Player1Avatars.Count == 0 && Player2Avatars.Count == 0)
-		// {
+		if(Player1Avatars.Count == 0 && Player2Avatars.Count == 0)
+		{
 			AvatarController[] avatars = FindObjectsOfType(typeof(AvatarController)) as AvatarController[];
 			
 			foreach(AvatarController avatar in avatars)
 			{
 				Player1Avatars.Add(avatar.gameObject);
 			}
-		// }
+		}
 		
 		if(Player1Controllers != null)
 		{
