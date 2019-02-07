@@ -51,9 +51,32 @@ public class ShooterPlayer : ShootBalloonBehavior
 #else
         if (Input.GetMouseButtonDown(0) && !targetSettled && gameController.getRoleChoosen() == Role.Shooter)
         {
-            this.SetTarget(Input.mousePosition);
+            RaycastHit hit;
+            Ray ray = choiceTargetCamera.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                Transform objectHit = hit.transform;
+                if (objectHit.tag.Equals("Ball"))
+                {
+                    float x = Mathf.Clamp((hit.point.x - objectHit.position.x) * 11,-1,1);
+                    float y = Mathf.Clamp((hit.point.y - objectHit.position.y) * 11,-1,1);
+                    
+                    Debug.Log(x+":"+y);
+                    Vector2 target = new Vector2(x, y);
+                    this.SetTarget(target);
+                }
+            }
         }
 #endif
+    }
+
+    //Get the screen size of an object in pixels, given its distance and diameter.
+    float DistanceAndDiameterToPixelSize(float distance, float diameter)
+    {
+
+        float pixelSize = (diameter * Mathf.Rad2Deg * Screen.height) / (distance * choiceTargetCamera.fieldOfView);
+        return pixelSize;
     }
 
     private void SetTarget(Vector2 position)

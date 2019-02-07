@@ -29,6 +29,7 @@ public class ShootBalloon : MonoBehaviour
         if (ballSource) ballSource.Play(); // sound effect
         d = direction;
         p = power;
+        t = target;
         // target.y = 0 && target.x = 0 --> Milieu du ballon
         // y = -1 = bas / y = 1 = haut
         // x = -1 = gauche / x = 1 = droite
