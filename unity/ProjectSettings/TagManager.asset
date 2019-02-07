@@ -8,6 +8,10 @@ TagManager:
   - FxTemporaire
   - Ball
   - goalHand
+  - StartPointBall
+  - ShooterModel
+  - PointShootCamera
+  - ShooterPlayer
   layers:
   - Default
   - TransparentFX
