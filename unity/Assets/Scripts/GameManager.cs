@@ -17,8 +17,8 @@ public class GameManager : MonoBehaviour
 
     internal void Reset()
     {
-        cameras[3].depth = 2;
-        cameras[4].depth = 3;
+        cameras[3].enabled = true;
+        cameras[4].enabled = false;
         this.stopPlayingBack();
         this.isPlayingBack = false;
         ballRigidBody.isKinematic = false;
@@ -71,8 +71,8 @@ public class GameManager : MonoBehaviour
 
     public void startPlayingBack()
     {
-        cameras[3].depth = 3;
-        cameras[4].depth = 2;
+        cameras[3].enabled = false;
+        cameras[4].enabled = true;
         if (!this.isPlayingBack)
         {
             this.isPlayingBack = true;
@@ -103,7 +103,6 @@ public class GameManager : MonoBehaviour
             case Role.Goal : 
                 cameras[0].enabled = true;
                 cameras[3].enabled = true;
-                cameras[4].enabled = true;
                 return;
             case Role.Shooter :
                 cameras[2].enabled = true;
