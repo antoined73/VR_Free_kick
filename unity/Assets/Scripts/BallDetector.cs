@@ -20,7 +20,7 @@ public class BallDetector : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag.Equals(BALL_TAG) && !ballDetectedOnce)
+        if (other.tag.Equals(BALL_TAG) && !ballDetectedOnce && gameManager.getRoleChoosen() == Role.Goal)
         {
             StartCoroutine(EnteredField());
         }

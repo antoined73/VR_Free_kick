@@ -124,7 +124,7 @@ public class ShooterPlayer : ShootBalloonBehavior
             if (networkObject != null) // connected
             {
                 Debug.Log("Launch order rpc online");
-                networkObject.SendRpc(RPC_SHOOT, Receivers.Server, this.shootDirection, this.shootPower, this.shootTarget);
+                StartCoroutine(RoutineShoot());
                 return true;
             }
             else // not connected
@@ -135,6 +135,13 @@ public class ShooterPlayer : ShootBalloonBehavior
             }
         }
         return false;
+    }
+
+    IEnumerator RoutineShoot()
+    {
+        networkObject.SendRpc(RPC_SHOOT, Receivers.Server, this.shootDirection, this.shootPower, this.shootTarget);
+        yield return new WaitForSeconds(9);
+        attackUI.ShowRetryBtn();
     }
 
     public bool TryResetBall()

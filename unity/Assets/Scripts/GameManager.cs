@@ -65,7 +65,6 @@ public class GameManager : MonoBehaviour
         {
             element.stopRecording();
         }
-        attackUI.ShowRetryBtn();
         this.startPlayingBack();
     }
 
