@@ -44,6 +44,9 @@ public class Replay : MonoBehaviour
             Debug.Log("playBack");
             transform.position = transformPosition[currentLoop];
             transform.rotation = transformRotation[currentLoop++];
+        } else if (isPlayingBack)
+        {
+            currentLoop = 100;
         } else
         {
             this.stopPlayingBack();

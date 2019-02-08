@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -19,6 +17,8 @@ public class GameManager : MonoBehaviour
 
     internal void Reset()
     {
+        cameras[3].enabled = true;
+        cameras[4].enabled = false;
         this.stopPlayingBack();
         this.isPlayingBack = false;
         ballRigidBody.isKinematic = false;
@@ -71,7 +71,9 @@ public class GameManager : MonoBehaviour
 
     public void startPlayingBack()
     {
-        if(!this.isPlayingBack)
+        cameras[3].enabled = false;
+        cameras[4].enabled = true;
+        if (!this.isPlayingBack)
         {
             this.isPlayingBack = true;
 
@@ -100,9 +102,12 @@ public class GameManager : MonoBehaviour
         {
             case Role.Goal : 
                 cameras[0].enabled = true;
-                //Display.displays[1].Activate();
+                cameras[3].enabled = true;
                 return;
-            case Role.Shooter : cameras[2].enabled = true; return;
+            case Role.Shooter :
+                cameras[2].enabled = true;
+                cameras[3].enabled = true;
+                return;
             default : return;
         }
     }
