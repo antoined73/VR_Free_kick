@@ -164,7 +164,19 @@ public class ShooterPlayer : ShootBalloonBehavior
         choiceTargetCamera.enabled = true;
         shootCamera.enabled = false;
 
-        if (networkObject.IsServer)
+        shootBall.ResetBall();
+
+        if (networkObject!=null)
+        {
+            if (networkObject.IsServer)
+            {
+                ballDetector.Reset();
+                gameController.Reset();
+                shootBall.ResetBall();
+                spawnManager.GenerateRandomShootPosition();
+            }
+        }
+        else
         {
             ballDetector.Reset();
             gameController.Reset();
