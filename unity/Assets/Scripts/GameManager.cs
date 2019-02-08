@@ -17,8 +17,8 @@ public class GameManager : MonoBehaviour
 
     internal void Reset()
     {
-        cameras[3].enabled = true;
-        cameras[4].enabled = false;
+        cameras[3].enabled = false;
+        cameras[4].enabled = true;
         this.stopPlayingBack();
         this.isPlayingBack = false;
         ballRigidBody.isKinematic = false;
@@ -70,8 +70,8 @@ public class GameManager : MonoBehaviour
 
     public void startPlayingBack()
     {
-        cameras[3].enabled = false;
-        cameras[4].enabled = true;
+        cameras[4].enabled = false;
+        cameras[3].enabled = true;
         if (!this.isPlayingBack)
         {
             this.isPlayingBack = true;

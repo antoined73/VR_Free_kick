@@ -169,8 +169,12 @@ public class ShooterPlayer : ShootBalloonBehavior
         shootOrdered = false;
         ballShot = false;
 
-        choiceTargetCamera.enabled = true;
-        shootCamera.enabled = false;
+        if (gameController.getRoleChoosen() == Role.Shooter)
+        {
+            choiceTargetCamera.enabled = true;
+            shootCamera.enabled = false;
+        }
+        
 
         shootBall.ResetBall();
 
