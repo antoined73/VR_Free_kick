@@ -52,7 +52,7 @@ public class DefenderManager : DefenderManagerBehavior
                     Quaternion.Euler(0, 180, 0));
                 defendersOffline[x] = def;
             }
-        } else
+        } else if (networkObject.IsServer)
         {
             GenerateDefenders();
         }
