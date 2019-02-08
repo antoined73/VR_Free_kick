@@ -76,10 +76,6 @@ public class SimpleGestureListener : MonoBehaviour, KinectGestures.GestureListen
 		string sGestureText = gesture + " detected";
 		if(gesture == KinectGestures.Gestures.Click)
 			sGestureText += string.Format(" at ({0:F1}, {1:F1})", screenPos.x, screenPos.y);
-		if (gesture == KinectGestures.Gestures.Jump)
-        {
-            Camera.main.GetComponent<DefenderManager>().JumpOffline();
-        }
 		if(GestureInfo != null)
 			GestureInfo.text = sGestureText;
 		

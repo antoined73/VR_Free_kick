@@ -11,6 +11,7 @@ public class ShooterPlayer : ShootBalloonBehavior
     private ShootBalloon shootBall;
     private BallDetector ballDetector;
     private AttackUIActions attackUI;
+    private SpawnManager spawnManager;
 
     private AudioSource whistleSource;
 
@@ -23,8 +24,8 @@ public class ShooterPlayer : ShootBalloonBehavior
     public bool ballShot;
 
     // Shoot parameters
-    private float shootDirection;
-    private float shootPower;
+    private float shootDirection = 0;
+    private float shootPower = 30;
     private Vector2 shootTarget;
     private bool shootOrdered;
 
@@ -34,7 +35,8 @@ public class ShooterPlayer : ShootBalloonBehavior
         shootBall = GameObject.FindObjectOfType<ShootBalloon>();
         ballDetector = GameObject.FindObjectOfType<BallDetector>();
         attackUI = GameObject.FindObjectOfType<AttackUIActions>();
-
+        spawnManager = GameObject.FindObjectOfType<SpawnManager>();
+        spawnManager.GenerateRandomShootPosition();
         whistleSource = GetComponent<AudioSource>();
     }
 
@@ -45,15 +47,53 @@ public class ShooterPlayer : ShootBalloonBehavior
         {
             if (touch.phase == TouchPhase.Began && !targetSettled && gameController.getRoleChoosen() == Role.Shooter)
             {
-                SetTarget(touch.position);
+                RaycastHit hit;
+                Ray ray = choiceTargetCamera.ScreenPointToRay(touch.position);
+
+                if (Physics.Raycast(ray, out hit))
+                {
+                    Transform objectHit = hit.transform;
+                    if (objectHit.tag.Equals("Ball"))
+                    {
+                        float x = Mathf.Clamp((hit.point.x - objectHit.position.x) * 11,-1,1);
+                        float y = Mathf.Clamp((hit.point.y - objectHit.position.y) * 11,-1,1);
+                    
+                        Debug.Log(x+":"+y);
+                        Vector2 target = new Vector2(x, y);
+                        this.SetTarget(target);
+                    }
+                }
             }
         }
 #else
         if (Input.GetMouseButtonDown(0) && !targetSettled && gameController.getRoleChoosen() == Role.Shooter)
         {
-            this.SetTarget(Input.mousePosition);
+            RaycastHit hit;
+            Ray ray = choiceTargetCamera.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                Transform objectHit = hit.transform;
+                if (objectHit.tag.Equals("Ball"))
+                {
+                    float x = Mathf.Clamp((hit.point.x - objectHit.position.x) * 11,-1,1);
+                    float y = Mathf.Clamp((hit.point.y - objectHit.position.y) * 11,-1,1);
+                    
+                    Debug.Log(x+":"+y);
+                    Vector2 target = new Vector2(x, y);
+                    this.SetTarget(target);
+                }
+            }
         }
 #endif
+    }
+
+    //Get the screen size of an object in pixels, given its distance and diameter.
+    float DistanceAndDiameterToPixelSize(float distance, float diameter)
+    {
+
+        float pixelSize = (diameter * Mathf.Rad2Deg * Screen.height) / (distance * choiceTargetCamera.fieldOfView);
+        return pixelSize;
     }
 
     private void SetTarget(Vector2 position)
@@ -130,6 +170,7 @@ public class ShooterPlayer : ShootBalloonBehavior
         choiceTargetCamera.enabled = true;
         shootCamera.enabled = false;
         shootBall.ResetBall();
+        spawnManager.GenerateRandomShootPosition();
     }
 
     private bool CanLaunchShoot()

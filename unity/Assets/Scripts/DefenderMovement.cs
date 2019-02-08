@@ -6,7 +6,12 @@ public class DefenderMovement : DefenderBehavior
 
     public Rigidbody rb;
     public float jumpForce = 100f;
-    private bool IsGrounded = true;
+    public bool isGrounded = true;
+
+    public void Awake()
+    {
+        this.transform.parent = GameObject.FindGameObjectWithTag("DefenderWall").transform;
+    }
 
     // Update is called once per frame
     private void Update()
@@ -24,17 +29,25 @@ public class DefenderMovement : DefenderBehavior
     
     public void Jump()
     {
-        if (IsGrounded)
+        if (isGrounded)
             rb.AddForce(new Vector3(0, jumpForce * Time.deltaTime, 0), ForceMode.Impulse);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        IsGrounded = true;
+        if (collision.collider.name == "Stade")
+        {
+            Debug.Log("Collision with stadium detected");
+            isGrounded = true;
+        }
     }
 
     private void OnCollisionExit(Collision collision)
     {
-        IsGrounded = false;
+        if (collision.collider.name == "Stade")
+        {
+            Debug.Log("Collision exit with stadium detected");
+            isGrounded = false;
+        }
     }
 }

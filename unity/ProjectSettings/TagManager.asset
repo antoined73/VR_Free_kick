@@ -8,6 +8,11 @@ TagManager:
   - FxTemporaire
   - Ball
   - goalHand
+  - StartPointBall
+  - ShooterModel
+  - PointShootCamera
+  - ShooterPlayer
+  - DefenderWall
   layers:
   - Default
   - TransparentFX
@@ -18,7 +23,7 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
+  - Defender
   - 
   - 
   - 
