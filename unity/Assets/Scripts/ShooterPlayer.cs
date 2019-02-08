@@ -148,6 +148,7 @@ public class ShooterPlayer : ShootBalloonBehavior
     {
         if (CanRetryShoot())
         {
+            Debug.Log("could REtry");
             if (networkObject != null) // connected
             {
                 networkObject.SendRpc(RPC_RETRY, Receivers.All);
@@ -199,7 +200,7 @@ public class ShooterPlayer : ShootBalloonBehavior
 
     private bool CanRetryShoot()
     {
-        return shootBall && gameController.getRoleChoosen() == Role.Shooter && (shootOrdered && ballShot && targetSettled);
+        return true;
     }
 
     internal void SetPowerValue(float newValue)
