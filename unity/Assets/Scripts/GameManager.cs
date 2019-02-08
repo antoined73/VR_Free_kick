@@ -102,11 +102,10 @@ public class GameManager : MonoBehaviour
         {
             case Role.Goal : 
                 cameras[0].enabled = true;
-                cameras[3].enabled = true;
+                cameras[4].enabled = true;
                 return;
             case Role.Shooter :
                 cameras[2].enabled = true;
-                cameras[3].enabled = true;
                 return;
             default : return;
         }
