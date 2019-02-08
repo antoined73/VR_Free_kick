@@ -2945,86 +2945,6 @@ MonoBehaviour:
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1392615743
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1392615737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1dd28f72a11461449d415c40026aa22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  kinectTiltAngle: 5
-  kinectPreview: {fileID: 1392615740}
-  TrackingMarker: {fileID: 1392615739}
-  TrackedJoint: 0
-  CalibrationObject: {fileID: 0}
-  smoothFactor: 5
-  number: 4
-  defender: {fileID: 3960401724054593457, guid: 5818f6ebad35c674c836b48b7ebdb926,
-    type: 3}
-  defenders: []
-  defendersOffline: []
---- !u!114 &1392615744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1392615737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00db858c1f8ff90478dad0aa1bac9a2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TwoUsers: 0
-  ComputeUserMap: 1
-  ComputeColorMap: 1
-  DisplayUserMap: 0
-  DisplayColorMap: 0
-  DisplaySkeletonLines: 0
-  DisplayMapsWidthPercent: 20
-  SensorHeight: 1
-  SensorAngle: 0
-  MinUserDistance: 1
-  MaxUserDistance: 0
-  DetectClosestUser: 1
-  IgnoreInferredJoints: 1
-  smoothing: 1
-  UseBoneOrientationsFilter: 0
-  UseClippedLegsFilter: 0
-  UseBoneOrientationsConstraint: 1
-  UseSelfIntersectionConstraint: 0
-  Player1Avatars: []
-  Player2Avatars: []
-  Player1CalibrationPose: 0
-  Player2CalibrationPose: 0
-  Player1Gestures: 
-  Player2Gestures: 
-  MinTimeBetweenGestures: 0.7
-  GestureListeners:
-  - {fileID: 1392615745}
-  CalibrationText: {fileID: 1392615741}
-  HandCursor1: {fileID: 0}
-  HandCursor2: {fileID: 0}
-  ControlMouseCursor: 0
-  GesturesDebugText: {fileID: 0}
---- !u!114 &1392615745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1392615737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd925816555dea7448d6c76479f97e45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GestureInfo: {fileID: 1392615742}
 --- !u!1 &1403247894 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3343665922927129360, guid: 309505b0d5266a7438ff8036c0be06af,
@@ -3873,7 +3793,7 @@ PrefabInstance:
     - target: {fileID: 3343665921854725727, guid: 309505b0d5266a7438ff8036c0be06af,
         type: 3}
       propertyPath: m_RenderMode
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3343665922927129363, guid: 309505b0d5266a7438ff8036c0be06af,
         type: 3}

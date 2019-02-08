@@ -88,14 +88,6 @@ public class ShooterPlayer : ShootBalloonBehavior
 #endif
     }
 
-    //Get the screen size of an object in pixels, given its distance and diameter.
-    float DistanceAndDiameterToPixelSize(float distance, float diameter)
-    {
-
-        float pixelSize = (diameter * Mathf.Rad2Deg * Screen.height) / (distance * choiceTargetCamera.fieldOfView);
-        return pixelSize;
-    }
-
     private void SetTarget(Vector2 position)
     {
         this.shootTarget = position;
@@ -128,13 +120,16 @@ public class ShooterPlayer : ShootBalloonBehavior
     {
         if (CanLaunchShoot())
         {
+            Debug.Log("CAN LAUNCH");
             if (networkObject != null) // connected
             {
-                networkObject.SendRpc(RPC_SHOOT, Receivers.All, this.shootDirection, this.shootPower, this.shootTarget);
+                Debug.Log("Launch order rpc online");
+                networkObject.SendRpc(RPC_SHOOT, Receivers.Server, this.shootDirection, this.shootPower, this.shootTarget);
                 return true;
             }
             else // not connected
             {
+                Debug.Log("Launch order offline");
                 LaunchShootOrder();
                 return true;
             }
@@ -162,15 +157,20 @@ public class ShooterPlayer : ShootBalloonBehavior
 
     private void LauchRetryOrder()
     {
-        ballDetector.Reset();
-        gameController.Reset();
         targetSettled = false;
         shootOrdered = false;
         ballShot = false;
+
         choiceTargetCamera.enabled = true;
         shootCamera.enabled = false;
-        shootBall.ResetBall();
-        spawnManager.GenerateRandomShootPosition();
+
+        if (networkObject.IsServer)
+        {
+            ballDetector.Reset();
+            gameController.Reset();
+            shootBall.ResetBall();
+            spawnManager.GenerateRandomShootPosition();
+        }
     }
 
     private bool CanLaunchShoot()
@@ -196,6 +196,7 @@ public class ShooterPlayer : ShootBalloonBehavior
     //RPC METHODS
     public override void Shoot(RpcArgs args)
     {
+        Debug.Log("rpc called");
         this.shootDirection = args.GetNext<float>();
         this.shootPower = args.GetNext<float>();
         this.shootTarget = args.GetNext<Vector2>();

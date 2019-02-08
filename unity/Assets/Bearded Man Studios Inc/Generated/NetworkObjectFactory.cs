@@ -59,6 +59,10 @@ namespace BeardedManStudios.Forge.Networking.Generated
 						availableCallback = true;
 						obj = new NetworkCameraNetworkObject(networker, id, frame);
 						break;
+					case rightGoalHandNetworkObject.IDENTITY:
+						availableCallback = true;
+						obj = new rightGoalHandNetworkObject(networker, id, frame);
+						break;
 					case ShootBalloonNetworkObject.IDENTITY:
 						availableCallback = true;
 						obj = new ShootBalloonNetworkObject(networker, id, frame);
@@ -67,9 +71,9 @@ namespace BeardedManStudios.Forge.Networking.Generated
 						availableCallback = true;
 						obj = new TestNetworkObject(networker, id, frame);
 						break;
-					case rightGoalHandNetworkObject.IDENTITY:
+					case ShooterPlayerMovementNetworkObject.IDENTITY:
 						availableCallback = true;
-						obj = new rightGoalHandNetworkObject(networker, id, frame);
+						obj = new ShooterPlayerMovementNetworkObject(networker, id, frame);
 						break;
 				}
 
