@@ -97,6 +97,9 @@ public class KinectManager : MonoBehaviour
 
 	// GUI Text to show gesture debug message.
 	public Text GesturesDebugText;
+
+    // Interval to run the code every x frames
+    public int interval = 3;
 	
 
 	// Bool to keep track of whether Kinect has been initialized
@@ -1100,35 +1103,38 @@ public class KinectManager : MonoBehaviour
 	
 	void Update()
 	{
-		if(KinectInitialized)
+		if(KinectInitialized)// && (Time.frameCount % interval == 0))
 		{
 			// needed by the KinectExtras' native wrapper to check for next frames
 			// uncomment the line below, if you use the Extras' wrapper, but none of the Extras' managers
 			//KinectWrapper.UpdateKinectSensor();
 			
-	        // If the players aren't all calibrated yet, draw the user map.
-			if(ComputeUserMap)
-			{
-				if(depthStreamHandle != IntPtr.Zero &&
-					KinectWrapper.PollDepth(depthStreamHandle, KinectWrapper.Constants.IsNearMode, ref usersDepthMap))
-				{
-		        	UpdateUserMap();
-				}
-			}
-			
-			if(ComputeColorMap)
-			{
-				if(colorStreamHandle != IntPtr.Zero &&
-					KinectWrapper.PollColor(colorStreamHandle, ref usersColorMap, ref colorImage))
-				{
-					UpdateColorMap();
-				}
-			}
-			
-			if(KinectWrapper.PollSkeleton(ref smoothParameters, ref skeletonFrame))
-			{
-				ProcessSkeleton();
-			}
+            if ((Time.frameCount % interval == 0))
+            {
+                // If the players aren't all calibrated yet, draw the user map.
+                if (ComputeUserMap)
+                {
+                    if (depthStreamHandle != IntPtr.Zero &&
+                        KinectWrapper.PollDepth(depthStreamHandle, KinectWrapper.Constants.IsNearMode, ref usersDepthMap))
+                    {
+                        UpdateUserMap();
+                    }
+                }
+
+                if (ComputeColorMap)
+                {
+                    if (colorStreamHandle != IntPtr.Zero &&
+                        KinectWrapper.PollColor(colorStreamHandle, ref usersColorMap, ref colorImage))
+                    {
+                        UpdateColorMap();
+                    }
+                }
+
+                if (KinectWrapper.PollSkeleton(ref smoothParameters, ref skeletonFrame))
+                {
+                    ProcessSkeleton();
+                }
+            }
 			
 			// Update player 1's models if he/she is calibrated and the model is active.
 			if(Player1Calibrated)
@@ -1146,14 +1152,6 @@ public class KinectManager : MonoBehaviour
 				{
 					if(gestureData.complete)
 					{
-						if(gestureData.gesture == KinectGestures.Gestures.Click)
-						{
-							if(ControlMouseCursor)
-							{
-								MouseControl.MouseClick();
-							}
-						}
-						
 						foreach(KinectGestures.GestureListenerInterface listener in gestureListeners)
 						{
 							if(listener.GestureCompleted(Player1ID, 0, gestureData.gesture, 
@@ -1176,36 +1174,6 @@ public class KinectManager : MonoBehaviour
 					}
 					else if(gestureData.progress >= 0.1f)
 					{
-						if((gestureData.gesture == KinectGestures.Gestures.RightHandCursor || 
-							gestureData.gesture == KinectGestures.Gestures.LeftHandCursor) && 
-							gestureData.progress >= 0.5f)
-						{
-							if(GetGestureProgress(gestureData.userId, KinectGestures.Gestures.Click) < 0.3f)
-							{
-								if(HandCursor1 != null)
-								{
-									Vector3 vCursorPos = gestureData.screenPos;
-									
-									if(HandCursor1 == null)
-									{
-										float zDist = HandCursor1.rectTransform.position.z - Camera.main.transform.position.z;
-										vCursorPos.z = zDist;
-										
-										vCursorPos = Camera.main.ViewportToWorldPoint(vCursorPos);
-									}
-
-									HandCursor1.rectTransform.position = Vector3.Lerp(HandCursor1.rectTransform.position, vCursorPos, 3 * Time.deltaTime);
-								}
-								
-								if(ControlMouseCursor)
-								{
-									Vector3 vCursorPos = HandCursor1 != null ? HandCursor1.rectTransform.position :
-										Camera.main.WorldToViewportPoint(HandCursor1.rectTransform.position);
-									MouseControl.MouseMove(vCursorPos, CalibrationText);
-								}
-							}
-						}
-			
 						foreach(KinectGestures.GestureListenerInterface listener in gestureListeners)
 						{
 							listener.GestureInProgress(Player1ID, 0, gestureData.gesture, gestureData.progress, 
@@ -1231,14 +1199,6 @@ public class KinectManager : MonoBehaviour
 				{
 					if(gestureData.complete)
 					{
-						if(gestureData.gesture == KinectGestures.Gestures.Click)
-						{
-							if(ControlMouseCursor)
-							{
-								MouseControl.MouseClick();
-							}
-						}
-						
 						foreach(KinectGestures.GestureListenerInterface listener in gestureListeners)
 						{
 							if(listener.GestureCompleted(Player2ID, 1, gestureData.gesture, 
@@ -1261,36 +1221,6 @@ public class KinectManager : MonoBehaviour
 					}
 					else if(gestureData.progress >= 0.1f)
 					{
-						if((gestureData.gesture == KinectGestures.Gestures.RightHandCursor || 
-							gestureData.gesture == KinectGestures.Gestures.LeftHandCursor) && 
-							gestureData.progress >= 0.5f)
-						{
-							if(GetGestureProgress(gestureData.userId, KinectGestures.Gestures.Click) < 0.3f)
-							{
-								if(HandCursor2 != null)
-								{
-									Vector3 vCursorPos = gestureData.screenPos;
-									
-									if(HandCursor2 == null)
-									{
-										float zDist = HandCursor2.rectTransform.position.z - Camera.main.transform.position.z;
-										vCursorPos.z = zDist;
-										
-										vCursorPos = Camera.main.ViewportToWorldPoint(vCursorPos);
-									}
-									
-									HandCursor2.rectTransform.position = Vector3.Lerp(HandCursor2.rectTransform.position, vCursorPos, 3 * Time.deltaTime);
-								}
-								
-								if(ControlMouseCursor)
-								{
-									Vector3 vCursorPos = HandCursor2 != null ? HandCursor2.rectTransform.position :
-										Camera.main.WorldToViewportPoint(HandCursor2.rectTransform.position);
-									MouseControl.MouseMove(vCursorPos, CalibrationText);
-								}
-							}
-						}
-						
 						foreach(KinectGestures.GestureListenerInterface listener in gestureListeners)
 						{
 							listener.GestureInProgress(Player2ID, 1, gestureData.gesture, gestureData.progress, 

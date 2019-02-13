@@ -8,16 +8,18 @@ using System.Collections.Generic;
 public class DefenderManager : DefenderManagerBehavior
 {
     public int kinectTiltAngle = 5;
+    public bool enablePreview = false;
     public Image kinectPreview;
     public RectTransform TrackingMarker;
     public RectTransform TrackingMarker2;
     public KinectWrapper.NuiSkeletonPositionIndex TrackedJoint = KinectWrapper.NuiSkeletonPositionIndex.HandRight;
-    public GameObject CalibrationObject;
     public float smoothFactor = 5f;
     public int number = 4;
 
-    private float distanceToCamera = 10f;
-    private int angle;
+    // Interval to run the code every x frame
+    public int interval = 3;
+    
+    private bool isNetwork;
 
     public GameObject defender;
     public DefenderBehavior[] defenders = new DefenderBehavior[0];
@@ -25,21 +27,19 @@ public class DefenderManager : DefenderManagerBehavior
 
     private void Awake()
     {
-        KinectManager Manager = KinectManager.Instance;
-        Manager = KinectManager.Instance;
-        KinectWrapper.NuiCameraElevationGetAngle(out angle);
-        Debug.Log("Current angle = " + angle);
-        KinectWrapper.NuiCameraElevationSetAngle(0);
+        isNetwork = (networkObject != null);
+        if (!enablePreview)
+        {
+            kinectPreview.gameObject.SetActive(false);
+            TrackingMarker.gameObject.SetActive(false);
+            TrackingMarker2.gameObject.SetActive(false);
+        }
     }
 
     void Start()
     {
         KinectManager Manager = KinectManager.Instance;
-        if (CalibrationObject)
-        {
-            distanceToCamera = (CalibrationObject.transform.position - Camera.main.transform.position).magnitude;
-        }
-        if ((networkObject == null))
+        if (!isNetwork)
         {
             // Generate defenders in offline mode.
             defendersOffline = new GameObject[number];
@@ -56,15 +56,15 @@ public class DefenderManager : DefenderManagerBehavior
         {
             GenerateDefenders();
         }
-        Manager.ResetAvatarControllers();
-        Debug.Log(Manager.Player1Avatars.Count);
+        if (Manager && Manager.IsInitialized())
+            Manager.ResetAvatarControllers();
     }
 
     public void GenerateDefenders()
     {
         RemoveDefenders();
         defenders = new DefenderBehavior[4];
-        for (int x = 0; x < 4; x++)
+        for (int x = 0; x < number; x++)
         {
             // Instantiate a new Defender Network Object.
             DefenderBehavior def = NetworkManager.Instance.InstantiateDefender(
@@ -143,11 +143,11 @@ public class DefenderManager : DefenderManagerBehavior
 
     public void ResetDebugTracker()
     {
-        if (TrackingMarker)
+        if (enablePreview && TrackingMarker)
         {
             TrackingMarker.anchoredPosition = new Vector2(0, 0);
         }
-        if (TrackingMarker2)
+        if (enablePreview && TrackingMarker2)
         {
             TrackingMarker2.anchoredPosition = new Vector2(0, 0);
         }
@@ -155,29 +155,15 @@ public class DefenderManager : DefenderManagerBehavior
 
     void Update()
     {
-        // if (!networkObject.IsServer)
-        // {
-        KinectWrapper.NuiCameraElevationGetAngle(out angle);
         KinectManager Manager = KinectManager.Instance;
-        if (Manager && Manager.IsInitialized())
+        if (Manager && Manager.IsInitialized() && (Time.frameCount % interval == 0))
         {
-            if (angle < 4 && !Manager.IsUserDetected())
-            {
-                Debug.Log("Current angle = " + angle);
-                KinectWrapper.NuiCameraElevationSetAngle(kinectTiltAngle);
-            }
-
-
-            //backgroundImage.renderer.material.mainTexture = manager.GetUsersClrTex();
-            if (kinectPreview)
+            if (enablePreview && kinectPreview)
             {
                 Texture2D tex = Manager.GetUsersClrTex();
                 Sprite sprite = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), new Vector2(0.5f, 0.5f));
                 kinectPreview.sprite = sprite;
             }
-
-            //Vector3 vRight = BottomRight - BottomLeft;
-            //Vector3 vUp = TopLeft - BottomLeft;
 
             int iJointIndex = (int)TrackedJoint;
             if (Manager.IsUserDetected())
@@ -189,7 +175,6 @@ public class DefenderManager : DefenderManagerBehavior
                 if (Manager.IsJointTracked(user1Id, iJointIndex))
                 {
                     Vector3 posJoint = Manager.GetRawSkeletonJointPos(user1Id, iJointIndex);
-                    // Debug.Log("Joint position = " + posJoint);
 
                     if (posJoint != Vector3.zero)
                     {
@@ -199,25 +184,15 @@ public class DefenderManager : DefenderManagerBehavior
                         // depth pos to color pos
                         Vector2 posColor = Manager.GetColorMapPosForDepthPos(posDepth);
 
-                        float scaleX = (float)posColor.x / KinectWrapper.Constants.ColorImageWidth;
-                        float scaleY = 1.0f - (float)posColor.y / KinectWrapper.Constants.ColorImageHeight;
-
-                        //Vector3 localPos = new Vector3(scaleX * 10f - 5f, 0f, scaleY * 10f - 5f); // 5f is 1/2 of 10f - size of the plane
-                        //Vector3 vPosOverlay = backgroundImage.transform.TransformPoint(localPos);
-                        //Vector3 vPosOverlay = BottomLeft + ((vRight * scaleX) + (vUp * scaleY));
+                        //float scaleX = (float)posColor.x / KinectWrapper.Constants.ColorImageWidth;
+                        //float scaleY = 1.0f - (float)posColor.y / KinectWrapper.Constants.ColorImageHeight;
 
                         if (TrackingMarker)
                         {
                             TrackingMarker.anchoredPosition = new Vector2(posColor.x - kinectPreview.rectTransform.rect.width, -posColor.y);
                         }
 
-                        if (CalibrationObject)
-                        {
-                            Vector3 vPosOverlay = Camera.main.ViewportToWorldPoint(new Vector3(scaleX, scaleY, distanceToCamera));
-                            CalibrationObject.transform.position = Vector3.Lerp(CalibrationObject.transform.position, vPosOverlay, smoothFactor * Time.deltaTime);
-                        }
-
-                        if (networkObject == null)
+                        if (!isNetwork)
                         {
                             for (int i = 0; i < (Manager.IsJointTracked(user2Id, iJointIndex) ? 2 : 4); i++)
                             {
@@ -257,7 +232,7 @@ public class DefenderManager : DefenderManagerBehavior
                             TrackingMarker2.anchoredPosition = new Vector2(posColor.x - kinectPreview.rectTransform.rect.width, -posColor.y);
                         }
 
-                        if (networkObject == null)
+                        if (!isNetwork)
                         {
                             for (int i = 2; i < 4; i++)
                             {
@@ -284,6 +259,5 @@ public class DefenderManager : DefenderManagerBehavior
                 }
             }
         }
-        // }
     }
 }
