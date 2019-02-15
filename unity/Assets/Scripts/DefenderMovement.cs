@@ -10,7 +10,7 @@ public class DefenderMovement : DefenderBehavior
 
     public void Awake()
     {
-        this.transform.parent = GameObject.FindGameObjectWithTag("DefenderWall").transform;
+        transform.parent = GameObject.FindGameObjectWithTag("DefenderWall").transform;
     }
 
     // Update is called once per frame

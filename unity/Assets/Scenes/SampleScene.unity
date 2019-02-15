@@ -730,6 +730,7 @@ MonoBehaviour:
   HandCursor2: {fileID: 0}
   ControlMouseCursor: 0
   GesturesDebugText: {fileID: 0}
+  interval: 3
 --- !u!114 &183115977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -743,13 +744,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kinectTiltAngle: 5
+  enablePreview: 0
   kinectPreview: {fileID: 1392615740}
   TrackingMarker: {fileID: 1392615739}
   TrackingMarker2: {fileID: 0}
   TrackedJoint: 0
-  CalibrationObject: {fileID: 0}
   smoothFactor: 5
   number: 4
+  interval: 3
   defender: {fileID: 3960401724054593457, guid: 5818f6ebad35c674c836b48b7ebdb926,
     type: 3}
   defenders: []
@@ -2090,13 +2092,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kinectTiltAngle: 5
+  enablePreview: 0
   kinectPreview: {fileID: 1392615740}
   TrackingMarker: {fileID: 1392615739}
   TrackingMarker2: {fileID: 1738735669}
   TrackedJoint: 0
-  CalibrationObject: {fileID: 0}
   smoothFactor: 5
   number: 4
+  interval: 3
   defender: {fileID: 3960401724054593457, guid: 5818f6ebad35c674c836b48b7ebdb926,
     type: 3}
   defenders: []
@@ -2133,8 +2136,8 @@ MonoBehaviour:
   UseSelfIntersectionConstraint: 0
   Player1Avatars: []
   Player2Avatars: []
-  Player1CalibrationPose: 0
-  Player2CalibrationPose: 0
+  Player1CalibrationPose: 1
+  Player2CalibrationPose: 1
   Player1Gestures: 
   Player2Gestures: 
   MinTimeBetweenGestures: 0.7
@@ -2145,6 +2148,7 @@ MonoBehaviour:
   HandCursor2: {fileID: 0}
   ControlMouseCursor: 0
   GesturesDebugText: {fileID: 0}
+  interval: 3
 --- !u!1 &1079866168 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 104661018, guid: 309505b0d5266a7438ff8036c0be06af,

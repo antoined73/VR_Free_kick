@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 2514087429130518203}
-  jumpForce: 4000
+  jumpForce: 6000
   isGrounded: 1
 --- !u!136 &9023556694956377719
 CapsuleCollider:
