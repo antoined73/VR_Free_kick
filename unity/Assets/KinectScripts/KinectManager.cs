@@ -11,6 +11,8 @@ using UnityEngine.UI;
 public class KinectManager : MonoBehaviour
 {
 	public enum Smoothing : int { None, Default, Medium, Aggressive }
+
+    public bool canUpdate;
 	
 	
 	// Public Bool to determine how many players there are. Default of one user.
@@ -1103,6 +1105,11 @@ public class KinectManager : MonoBehaviour
 	
 	void Update()
 	{
+        if(!canUpdate)
+        {
+            return;
+        }
+
 		if(KinectInitialized)// && (Time.frameCount % interval == 0))
 		{
 			// needed by the KinectExtras' native wrapper to check for next frames

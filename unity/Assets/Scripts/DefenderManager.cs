@@ -9,6 +9,7 @@ public class DefenderManager : DefenderManagerBehavior
 {
     public int kinectTiltAngle = 5;
     public bool enablePreview = false;
+    public bool canUpdate = true;
     public Image kinectPreview;
     public RectTransform TrackingMarker;
     public RectTransform TrackingMarker2;
@@ -155,6 +156,10 @@ public class DefenderManager : DefenderManagerBehavior
 
     void Update()
     {
+        if (!canUpdate)
+        {
+            return;
+        }
         KinectManager Manager = KinectManager.Instance;
         if (Manager && Manager.IsInitialized() && (Time.frameCount % interval == 0))
         {
