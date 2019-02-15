@@ -25,8 +25,15 @@ public class SpawnManager : MonoBehaviour
 
     public void GenerateRandomShootPosition()
     {
-        float randomX = Random.Range(-8, 8);
-        float randomZ = Random.Range(0, -10);
+        float randomZ = Random.Range(-4, -10);
+        float randomX = 0;
+        if (randomZ <= -4 && randomZ >=-6)
+        {
+            randomX = Random.Range(-3, 3);
+        } else
+        {
+            randomX = Random.Range(-8, 8);
+        }
 
         shooterPlayer.transform.position = MoveAtRandomPosition(randomX, randomZ, initialShooterPosition);
         startPointBall.transform.position = MoveAtRandomPosition(randomX, randomZ, initialStartPointPosition);
