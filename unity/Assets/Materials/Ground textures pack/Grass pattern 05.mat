@@ -8,8 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Grass pattern 05
-  m_Shader: {fileID: 2, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
+  m_Shader: {fileID: 4800000, guid: edfe3c45427b6384e961f9c6847523ab, type: 3}
+  m_ShaderKeywords: _NORMALMAP _STOCHASTIC_ALBEDO
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -23,12 +23,154 @@ Material:
         m_Texture: {fileID: 2800000, guid: f0ec40764219f3f4787df1c70bacf45b, type: 3}
         m_Scale: {x: 300, y: 300}
         m_Offset: {x: 1, y: 1}
+    - _BumpMapInvT:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMapT:
+        m_Texture: {fileID: 2800000, guid: f0ec40764219f3f4787df1c70bacf45b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMapInvT:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMapT:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMaskInvT:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMaskT:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMapInvT:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMapT:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMapInvT:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMapT:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: f0a8168310b10da4faedc474bb26c20f, type: 3}
         m_Scale: {x: 300, y: 300}
         m_Offset: {x: 1, y: 1}
+    - _MainTexInvT:
+        m_Texture: {fileID: 2800000, guid: 52fee14eac67b4349b0c3e9280e8cba8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTexT:
+        m_Texture: {fileID: 2800000, guid: fa5d14332065aa84a8ed96f4a44f473c, type: 3}
+        m_Scale: {x: 300, y: 300}
+        m_Offset: {x: 1, y: 1}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMapInvT:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMapT:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMapInvT:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMapT:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMapInvT:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMapT:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _BumpScale: 1
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 0
+    - _GlossMapScale: 1
+    - _Glossiness: 0
+    - _GlossyReflections: 1
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
     - _Shininess: 0.078125
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _StochasticInputSelected: 1
+    - _UVSec: 0
+    - _ZWrite: 1
     m_Colors:
+    - _BumpMapColorSpaceOrigin: {r: 0, g: 0, b: 0, a: 0}
+    - _BumpMapColorSpaceVector1: {r: 0, g: 0, b: 0, a: 0}
+    - _BumpMapColorSpaceVector2: {r: 0, g: 0, b: 0, a: 0}
+    - _BumpMapColorSpaceVector3: {r: 0, g: 0, b: 0, a: 0}
+    - _BumpMapDXTScalers: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _DetailAlbedoColorSpaceOrigin: {r: 0, g: 0, b: 0, a: 0}
+    - _DetailAlbedoColorSpaceVector1: {r: 0, g: 0, b: 0, a: 0}
+    - _DetailAlbedoColorSpaceVector2: {r: 0, g: 0, b: 0, a: 0}
+    - _DetailAlbedoColorSpaceVector3: {r: 0, g: 0, b: 0, a: 0}
+    - _DetailAlbedoMapDXTScalers: {r: 0, g: 0, b: 0, a: 0}
+    - _DetailNormalColorSpaceOrigin: {r: 0, g: 0, b: 0, a: 0}
+    - _DetailNormalColorSpaceVector1: {r: 0, g: 0, b: 0, a: 0}
+    - _DetailNormalColorSpaceVector2: {r: 0, g: 0, b: 0, a: 0}
+    - _DetailNormalColorSpaceVector3: {r: 0, g: 0, b: 0, a: 0}
+    - _DetailNormalMapDXTScalers: {r: 0, g: 0, b: 0, a: 0}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissionColorSpaceOrigin: {r: 0, g: 0, b: 0, a: 0}
+    - _EmissionColorSpaceVector1: {r: 0, g: 0, b: 0, a: 0}
+    - _EmissionColorSpaceVector2: {r: 0, g: 0, b: 0, a: 0}
+    - _EmissionColorSpaceVector3: {r: 0, g: 0, b: 0, a: 0}
+    - _EmissionMapDXTScalers: {r: 0, g: 0, b: 0, a: 0}
+    - _MainTexColorSpaceOrigin: {r: -0.233402, g: 0.23493642, b: -0.12858431, a: 0}
+    - _MainTexColorSpaceVector1: {r: 0.45602965, g: -0.30570862, b: -0.19290105, a: 0}
+    - _MainTexColorSpaceVector2: {r: 0.8206711, g: 1.0052391, b: 0.34701756, a: 0}
+    - _MainTexColorSpaceVector3: {r: 0.085756965, g: -0.30910304, b: 0.6925996, a: 0}
+    - _MainTexDXTScalers: {r: 1.7184474, g: 0.7444409, b: 1.3101388, a: 0}
+    - _SpecColor: {r: 0.16981131, g: 0.16981131, b: 0.16981131, a: 1}

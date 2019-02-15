@@ -49,10 +49,12 @@ public class ShooterPlayer : ShootBalloonBehavior
             {
                 RaycastHit hit;
                 Ray ray = choiceTargetCamera.ScreenPointToRay(touch.position);
-
+                
                 if (Physics.Raycast(ray, out hit))
                 {
                     Transform objectHit = hit.transform;
+
+                    this.SetTarget(Vector2.zero);
                     if (objectHit.tag.Equals("Ball"))
                     {
                         float x = Mathf.Clamp((hit.point.x - objectHit.position.x) * 11,-1,1);
@@ -148,7 +150,7 @@ public class ShooterPlayer : ShootBalloonBehavior
     {
         if (CanRetryShoot())
         {
-            Debug.Log("could REtry");
+            Debug.Log("could Retry");
             if (networkObject != null) // connected
             {
                 networkObject.SendRpc(RPC_RETRY, Receivers.All);
