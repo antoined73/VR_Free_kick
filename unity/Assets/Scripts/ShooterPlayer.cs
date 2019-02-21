@@ -13,6 +13,9 @@ public class ShooterPlayer : ShootBalloonBehavior
     private AttackUIActions attackUI;
     private SpawnManager spawnManager;
 
+    public Animator shooterAnimator;
+
+
     private AudioSource whistleSource;
 
     // Cameras used during shoot
@@ -111,7 +114,9 @@ public class ShooterPlayer : ShootBalloonBehavior
     IEnumerator ShootOrder()
     {
         whistleSource.Play();
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
+        shooterAnimator.SetTrigger("kickBall");
+        yield return new WaitForSeconds(1.25f);
         ballShot = true;
         shootBall.Shoot(this.shootTarget, this.shootDirection, this.shootPower);
         yield return new WaitForSeconds(6);
@@ -123,6 +128,9 @@ public class ShooterPlayer : ShootBalloonBehavior
         if (CanLaunchShoot())
         {
             Debug.Log("CAN LAUNCH");
+            StartCoroutine(RoutineShoot());
+            return true;
+            /***
             if (networkObject != null) // connected
             {
                 Debug.Log("Launch order rpc online");
@@ -134,14 +142,23 @@ public class ShooterPlayer : ShootBalloonBehavior
                 Debug.Log("Launch order offline");
                 LaunchShootOrder();
                 return true;
-            }
+            }**/
         }
         return false;
     }
 
     IEnumerator RoutineShoot()
     {
-        networkObject.SendRpc(RPC_SHOOT, Receivers.Server, this.shootDirection, this.shootPower, this.shootTarget);
+        if (networkObject != null) // connected
+        {
+            Debug.Log("Launch order rpc online");
+            networkObject.SendRpc(RPC_SHOOT, Receivers.Server, this.shootDirection, this.shootPower, this.shootTarget);
+        }
+        else // not connected
+        {
+            Debug.Log("Launch order offline");
+            LaunchShootOrder();
+        }
         yield return new WaitForSeconds(9);
         attackUI.ShowRetryBtn();
     }
