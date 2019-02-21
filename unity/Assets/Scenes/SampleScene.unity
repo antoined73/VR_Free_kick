@@ -745,7 +745,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1dd28f72a11461449d415c40026aa22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kinectTiltAngle: 5
   enablePreview: 0
   canUpdate: 1
   kinectPreview: {fileID: 1392615740}
@@ -2269,7 +2268,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1dd28f72a11461449d415c40026aa22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kinectTiltAngle: 5
   enablePreview: 0
   canUpdate: 1
   kinectPreview: {fileID: 1392615740}
@@ -2295,7 +2293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00db858c1f8ff90478dad0aa1bac9a2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canUpdate: 0
+  canUpdate: 1
   TwoUsers: 1
   ComputeUserMap: 1
   ComputeColorMap: 1
@@ -2304,7 +2302,7 @@ MonoBehaviour:
   DisplaySkeletonLines: 0
   DisplayMapsWidthPercent: 20
   SensorHeight: 1
-  SensorAngle: 0
+  SensorAngle: 3
   MinUserDistance: 1
   MaxUserDistance: 0
   DetectClosestUser: 1
