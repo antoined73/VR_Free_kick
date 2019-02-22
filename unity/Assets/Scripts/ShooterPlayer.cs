@@ -38,9 +38,13 @@ public class ShooterPlayer : ShootBalloonBehavior
         shootBall = GameObject.FindObjectOfType<ShootBalloon>();
         ballDetector = GameObject.FindObjectOfType<BallDetector>();
         attackUI = GameObject.FindObjectOfType<AttackUIActions>();
-        spawnManager = GameObject.FindObjectOfType<SpawnManager>();
-        spawnManager.GenerateRandomShootPosition();
         whistleSource = GetComponent<AudioSource>();
+    }
+
+    void Start()
+    {
+        spawnManager = FindObjectOfType<SpawnManager>();
+        spawnManager.GenerateRandomShootPosition();
     }
 
     void Update()

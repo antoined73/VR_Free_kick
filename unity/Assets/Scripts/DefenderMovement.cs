@@ -21,8 +21,10 @@ public class DefenderMovement : DefenderBehavior
             if (!networkObject.IsServer)
             {
                 transform.position = networkObject.position;
+            } else
+            {
+                networkObject.position = transform.position;
             }
-            networkObject.position = transform.position;
         }
         rb.AddForce(Vector3.down * Time.deltaTime);
     }
@@ -30,7 +32,7 @@ public class DefenderMovement : DefenderBehavior
     public void Jump()
     {
         if (isGrounded)
-            rb.AddForce(new Vector3(0, jumpForce * Time.deltaTime, 0), ForceMode.Impulse);
+            rb.AddForce(new Vector3(0, jumpForce * Time.deltaTime * 1.5f, 0), ForceMode.Impulse);
     }
 
     private void OnCollisionEnter(Collision collision)

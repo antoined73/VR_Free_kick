@@ -7,7 +7,6 @@ using System.Collections.Generic;
 
 public class DefenderManager : DefenderManagerBehavior
 {
-    public int kinectTiltAngle = 5;
     public bool enablePreview = false;
     public bool canUpdate = true;
     public Image kinectPreview;
@@ -47,7 +46,7 @@ public class DefenderManager : DefenderManagerBehavior
             for (int x = 0; x < number; x++)
             {
                 GameObject def = Instantiate(defender, new Vector3(
-                    transform.position.x + 0.5f - number / 2,
+                    transform.position.x - number / 2,
                     0,
                     transform.position.z - 4), 
                     Quaternion.Euler(0, 180, 0));
@@ -71,7 +70,7 @@ public class DefenderManager : DefenderManagerBehavior
             DefenderBehavior def = NetworkManager.Instance.InstantiateDefender(
                 0, 
                 new Vector3(
-                    transform.position.x + 0.5f - number / 2,
+                    transform.position.x - number / 2,
                     0,
                     transform.position.z - 4),
                 Quaternion.Euler(0, 180, 0)
@@ -199,22 +198,22 @@ public class DefenderManager : DefenderManagerBehavior
 
                         if (!isNetwork)
                         {
-                            for (int i = 0; i < (Manager.IsJointTracked(user2Id, iJointIndex) ? 2 : 4); i++)
+                            for (int i = -2; i < (Manager.IsJointTracked(user2Id, iJointIndex) ? 0 : 2); i++)
                             {
-                                GameObject d = defendersOffline[i];
-                                float newX = transform.position.x - posJoint.x + i + 0.5f - number / 2;
+                                GameObject d = defendersOffline[i + 2];
+                                float newX = transform.position.x - posJoint.x + i * 0.5f;
                                 d.transform.position = Vector3.Lerp(d.transform.position, new Vector3(newX, d.transform.position.y, d.transform.position.z), smoothFactor * Time.deltaTime);
                             }
                         } else {
-                            for (int i = 0; i < (Manager.IsJointTracked(user2Id, iJointIndex) ? 2 : 4); i++)
+                            for (int i = -2; i < (Manager.IsJointTracked(user2Id, iJointIndex) ? 0 : 2); i++)
                             {
-                                DefenderBehavior d = defenders[i];
-                                float newX = transform.position.x - posJoint.x + i + 0.5f - number / 2;
-                                d.gameObject.transform.position = Vector3.Lerp(
-                                    d.gameObject.transform.position,
+                                DefenderBehavior d = defenders[i + 2];
+                                float newX = transform.position.x - posJoint.x + i * 0.5f;
+                                d.transform.position = Vector3.Lerp(
+                                    d.transform.position,
                                     new Vector3(newX,
-                                                d.gameObject.transform.position.y,
-                                                d.gameObject.transform.position.z),
+                                                d.transform.position.y,
+                                                d.transform.position.z),
                                     smoothFactor * Time.deltaTime);
                             }
                         }
@@ -239,24 +238,24 @@ public class DefenderManager : DefenderManagerBehavior
 
                         if (!isNetwork)
                         {
-                            for (int i = 2; i < 4; i++)
+                            for (int i = 0; i < 2; i++)
                             {
-                                GameObject d = defendersOffline[i];
-                                Vector3 newPosition = defendersOffline[i].transform.position;
+                                GameObject d = defendersOffline[i + 2];
+                                Vector3 newPosition = d.transform.position;
                                 newPosition.x = transform.position.x - posJoint.x;
-                                newPosition.x += i - number / 2;
+                                newPosition.x += i * 0.5f - 0.5f;
                                 d.transform.position = Vector3.Lerp(d.transform.position, newPosition, smoothFactor * Time.deltaTime);
                             }
                         } else {
-                            for (int i = 2; i < 4; i++)
+                            for (int i = 0; i < 2; i++)
                             {
-                                DefenderBehavior d = defenders[i];
-                                float newX = transform.position.x - posJoint.x + i - number / 2;
-                                d.gameObject.transform.position = Vector3.Lerp(
-                                    d.gameObject.transform.position,
+                                DefenderBehavior d = defenders[i + 2];
+                                float newX = transform.position.x - posJoint.x + i * 0.5f - 0.5f;
+                                d.transform.position = Vector3.Lerp(
+                                    d.transform.position,
                                     new Vector3(newX,
-                                                d.gameObject.transform.position.y,
-                                                d.gameObject.transform.position.z),
+                                                d.transform.position.y,
+                                                d.transform.position.z),
                                     smoothFactor * Time.deltaTime);
                             }
                         }

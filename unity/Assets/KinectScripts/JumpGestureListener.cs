@@ -39,7 +39,6 @@ public class JumpGestureListener : MonoBehaviour, KinectGestures.GestureListener
         }
         DefenderManager.ResetDebugTracker();
         manager.DetectGesture(userId, KinectGestures.Gestures.Jump);
-        manager.DetectGesture(userId, KinectGestures.Gestures.Squat);
 
         if (GestureInfo != null)
         {
