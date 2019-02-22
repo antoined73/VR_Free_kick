@@ -49,7 +49,6 @@ public class JumpGestureListener : MonoBehaviour, KinectGestures.GestureListener
     public void UserLost(uint userId, int userIndex)
     {
         KinectManager manager = KinectManager.Instance;
-        GestureInfo.text = "User lost";
         players.Remove(userId);
         manager.Player1Avatars = new List<GameObject>();
         manager.Player2Avatars = new List<GameObject>();
@@ -70,7 +69,6 @@ public class JumpGestureListener : MonoBehaviour, KinectGestures.GestureListener
         {
             DefenderManager.Jump(userId, players.Count);
         }
-        GestureInfo.text = sGestureText;
         return true;
     }
 

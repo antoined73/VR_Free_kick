@@ -87,6 +87,8 @@ public class KinectManager : MonoBehaviour
 	
 	// GUI Text to show messages.
 	public Text CalibrationText;
+
+    public CanvasGroup Hint;
 	
 	// GUI Texture to display the hand cursor for Player1
 	public Image HandCursor1;
@@ -1095,7 +1097,8 @@ public class KinectManager : MonoBehaviour
 		// GUI Text.
 		if(CalibrationText != null)
 		{
-			CalibrationText.text = "WAITING FOR USERS";
+			CalibrationText.text = "Levez la main droite pour rejoindre le mur de défenseur";
+            Hint.alpha = 1;
 		}
 		
 		Debug.Log("Waiting for users.");
@@ -1541,7 +1544,8 @@ public class KinectManager : MonoBehaviour
 			if(CalibrationText != null)
 			{
 				CalibrationText.text = "";
-			}
+                Hint.alpha = 0;
+            }
 		}
     }
 	
@@ -1601,9 +1605,10 @@ public class KinectManager : MonoBehaviour
 		Debug.Log("Waiting for users.");
 
 		if(CalibrationText != null)
-		{
-			CalibrationText.text = "WAITING FOR USERS";
-		}
+        {
+            CalibrationText.text = "Levez la main droite pour rejoindre le mur de défenseur";
+            Hint.alpha = 1;
+        }
 	}
 	
 	// Some internal constants
