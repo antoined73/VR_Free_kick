@@ -163,6 +163,8 @@ public class ShooterPlayer : ShootBalloonBehavior
             Debug.Log("Launch order offline");
             LaunchShootOrder();
         }
+        yield return new WaitForSeconds(2);
+        shooterAnimator.SetTrigger("kickBall");
         yield return new WaitForSeconds(9);
         attackUI.ShowRetryBtn();
     }
